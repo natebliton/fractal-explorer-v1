@@ -13,7 +13,7 @@ public class CameraFollow : MonoBehaviour
 
 
     #region Public Methods
-
+    public bool cameraFollowLocked;
     #endregion
 
     #region private methods
@@ -29,14 +29,26 @@ public class CameraFollow : MonoBehaviour
     void Update()
     {
         // move the camera to follow the player
-        // if the player has moved to the right
-        if(player.transform.position.x > mainCamera.transform.position.x)
+        // if camera lock is engaged
+        if(cameraFollowLocked) {
+            cameraFollow();
+        }
+
+    }
+
+    // if player is not centered in camera, move camera to match player position
+    void cameraFollow() {
+        if(player.transform.position.x > mainCamera.transform.position.x ||
+           player.transform.position.x < mainCamera.transform.position.x ||
+           player.transform.position.y > mainCamera.transform.position.y ||
+           player.transform.position.y < mainCamera.transform.position.y
+        )
         {
             mainCamera.transform.position =
                 new Vector3(player.transform.position.x,
-                mainCamera.transform.position.y,
+                player.transform.position.y,
                 mainCamera.transform.position.z);
-        }
+        } 
     }
 
     #endregion
