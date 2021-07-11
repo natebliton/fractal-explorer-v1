@@ -59,8 +59,8 @@ public class WaterManager : MonoBehaviour
     void Update()
     {
 //if(waters[0].transform.position.x + waterManager.transform.position.x)
-        print("water0 " + waters[0].transform.position.y);
-        print(mainCamera.transform.position.x + " " + mainCamera.transform.position.y);
+   //     print("water0 " + waters[0].transform.position.y);
+      //  print(mainCamera.transform.position.x + " " + mainCamera.transform.position.y);
 
         for(int i = 0; i < waters.Length; i++) {
             if(waters[i].transform.position.x - mainCamera.transform.position.x < -15)
