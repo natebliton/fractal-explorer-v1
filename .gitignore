@@ -70,8 +70,13 @@ crashlytics-build.properties
 # Ignore the Cache-file since it is updated locally either way
 /FractalV2/[Aa]ssets/**/FMODStudioCache.asset
 /FractalV2/[Aa]ssets/**/FMODStudioCache.asset.meta
+/FractalV2/[Aa]ssets/Plugins/FMOD/Cache/*
 /FractalV2/[Aa]ssets/Plugins/FMOD/Cache.meta
 /FractalV2/[Aa]ssets/Plugins/FMOD/Cache/Editor.meta
+
+# Ignore bank files in the StreamingAssets folder.
+/FractalV2/[Aa]ssets/StreamingAssets/**/*.bank
+/FractalV2/[Aa]ssets/StreamingAssets/**/*.bank.meta
 
 # Log-files
 fmod.log
