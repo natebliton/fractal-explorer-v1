@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WorldRevealer : MonoBehaviour
 {
-    public GameObject worldHider;
     public GameObject hiddenWorld;
 
     SpriteRenderer hiderRenderer;
@@ -29,7 +28,7 @@ public class WorldRevealer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hiderRenderer = worldHider.GetComponent<SpriteRenderer>();
+        hiderRenderer = GetComponent<SpriteRenderer>();
         worldRenderer = hiddenWorld.GetComponent<SpriteRenderer>();
         hiderRenderer.color = visible;
         worldRenderer.color = invisible;

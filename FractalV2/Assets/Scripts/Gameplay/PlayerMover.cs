@@ -27,27 +27,39 @@ public class PlayerMover : MonoBehaviour
 
     enum PlayerStates
     {
-        overheadIdle = 1,
-        overheadFly = 2,
-        rightIdle = 3,
-        rightFly = 4,
-        leftIdle = 5,
-        leftFly = 6,
-        landing = 7,
-        takingOff = 8,
-        transformToFish = 9
+        landedRight = 0,
+        landedLeft = 1,
+        toHoverRight=2,
+        toHoverLeft=3,
+        hoverRight=4,
+        hoverLeft=5,
+        toFlyRight=6,
+        toFlyLeft=7,
+        flyRight=8,
+        flyLeft=9,
+        flyToHoverRight=10,
+        flyToHoverLeft=11,
+        landingRight=12,
+        landingLeft=13
     }
 
     enum VerticalState
     {
-        land,
-        floating,
-        floatingInvert,
-        landInvert
+        landed,
+        landing,
+        takingOff,
+        hovering,
+        toflying,
+        flying,
+        slowToHover
+
     }
 
-    VerticalState verticalState = VerticalState.land;
+    [SerializeField]
+    VerticalState verticalState = VerticalState.landed;
 
+    [SerializeField]
+    PlayerStates playerState = PlayerStates.landedRight;
 
     // Start is called before the first frame update
     private void Start()
@@ -75,8 +87,37 @@ public class PlayerMover : MonoBehaviour
         MoveCharacter();
     }
 
+    private void OnMouseDown()    
+    {
+    }
+
     private void MoveCharacter()
     {
+        if(Input.GetMouseButtonDown(0)) {
+            print("Pressed left click.");
+            if(playerState == PlayerStates.landedRight) {
+                playerState = PlayerStates.landedLeft;
+            } else {
+                playerState = PlayerStates.landedRight;
+            }
+            animator.SetInteger(animationState,
+                (int)playerState);
+            print("clicked");
+        }
+
+        if(Input.GetMouseButtonDown(1)){
+            print("Pressed right click.");
+            playerState = PlayerStates.hoverRight;
+            animator.SetInteger(animationState,
+                (int)playerState);
+        }
+        
+        if(Input.GetMouseButtonDown(2)){
+            print("Pressed middle click.");
+            playerState = PlayerStates.hoverLeft;
+            animator.SetInteger(animationState,
+                (int)playerState);
+        }
 
         movement.x = Input.GetAxisRaw("Horizontal");
         
@@ -93,6 +134,13 @@ public class PlayerMover : MonoBehaviour
 
     private void UpdateState()
     {
+        // if landed
+        if(verticalState == VerticalState.landed) {
+
+        }
+        // if falling, or if movement.y is positive, go to hover
+        // if not, walk if movement.x is positive
+        // else, state is landed if not already set
         // if speed is high, tip forward
 
         // if above midway, flip upside down
