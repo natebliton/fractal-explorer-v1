@@ -13,6 +13,10 @@ public class CameraFollow : MonoBehaviour
 
 
     #region Public Methods
+    public string cameraFollowingTag = "Player";
+
+    // this object's dimensions determine the bounds of the camera in this scene
+    public GameObject boundingBackground;
 
     #endregion
 
@@ -21,7 +25,7 @@ public class CameraFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag(cameraFollowingTag);
         mainCamera = GetComponent<Camera>();
     }
 
@@ -30,14 +34,21 @@ public class CameraFollow : MonoBehaviour
     {
         // move the camera to follow the player
         // if the player has moved to the right
-        if(player.transform.position.x > mainCamera.transform.position.x)
+        if(Mathf.Abs(player.transform.position.x - mainCamera.transform.position.x) > 0 ||
+        Mathf.Abs(player.transform.position.y - mainCamera.transform.position.y) > 0 )
         {
             mainCamera.transform.position =
                 new Vector3(player.transform.position.x,
-                mainCamera.transform.position.y,
+                player.transform.position.y,
                 mainCamera.transform.position.z);
+            clampCamera();
         }
     }
+
+    // will clamp camera to not go outside of world bounds
+    void clampCamera() {
+
+    }    
 
     #endregion
 }
