@@ -68,13 +68,21 @@ public class WorldRevealer : MonoBehaviour
         state = endState;
     }
     private void OnMouseDown() {
-        
         if(state == WorldState.hidden || state == WorldState.hiding){
-            state = WorldState.revealing;
-            StartCoroutine(FadeWorld(state,alphaDuration));
+            state = WorldState.revealing; 
         } else {
             state = WorldState.hiding;
-            StartCoroutine(FadeWorld(state,alphaDuration));
         }
+        updateDisplay();
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(state == WorldState.hidden || state == WorldState.hiding){
+            state = WorldState.revealing; 
+        } 
+        updateDisplay();
+    }
+    private void updateDisplay() {
+        StartCoroutine(FadeWorld(state,alphaDuration));
     }
 }
