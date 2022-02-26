@@ -8,20 +8,20 @@ public class PlayerMover : MonoBehaviour
     // PlayerDamageEvent playerDamageEvent = new PlayerDamageEvent();
     private Animator animator;
     string animationState = "AnimationState";
-    private string currentState;
+    private string currentState = "landed-L";
     private const string LANDED_L = "landed-L";
     private const string LANDED_R = "landed-R";
 
-    private const string TOHOVER_L = "me-h-toHover-L";
-    private const string TOHOVER_R = "me-h-toHover-R";
+    private const string TOHOVER_L = "me-h-tohover-L";
+    private const string TOHOVER_R = "me-h-tohover-R";
     private const string HOVER_L = "me-h-hover-L";
     private const string HOVER_R = "me-h-hover-R";
     private const string FLY_L = "me-h-fly-L";
     private const string FLY_R = "me-h-fly-R";
     private const string TOFLY_L = "me-h-htofly-L";
     private const string TOFLY_R = "me-h-htofly-R";
-    private const string FTOHOVER_L = "me-h-ftoHover-L";
-    private const string FTOHOVER_R = "me-h-ftoHover-R";
+    private const string FTOHOVER_L = "me-h-ftohover-L";
+    private const string FTOHOVER_R = "me-h-ftohover-R";
     private const string TOLAND_L = "me-h-toland-L";
     private const string TOLAND_R = "me-h-toland-R";
     
@@ -69,7 +69,7 @@ public class PlayerMover : MonoBehaviour
 
     [SerializeField]
     PlayerStates playerState = PlayerStates.landedRight;
-    PlayerStates playerStateDisplayed = PlayerStates.landedRight;
+    PlayerStates playerStateLastDisplayed = PlayerStates.landedRight;
 
     #region Methods
 
@@ -78,7 +78,7 @@ public class PlayerMover : MonoBehaviour
     {
         // guard against calling current state
         if(currentState == newState) return;
-
+        currentState = newState;
         // play the animation
         animator.Play(newState);
     }
@@ -129,6 +129,8 @@ public class PlayerMover : MonoBehaviour
                 } else {
                     playerState = PlayerStates.flyLeft;
                 }
+               // Quaternion deltaRotation = Quaternion.Euler(vel * Time.fixedDeltaTime);
+               // rb2D.MoveRotation(rb2D.transform.rotation * deltaRotation);
             } else {
                 if(vel.x > 0f) {
                     playerState = PlayerStates.hoverRight;
@@ -187,22 +189,85 @@ public class PlayerMover : MonoBehaviour
     {
         switch (playerState) {
             case PlayerStates.landedRight:
-                ChangeAnimationState(LANDED_R);
+                if(playerStateLastDisplayed == PlayerStates.landedRight) {
+                    break;
+                }
+                if(playerStateLastDisplayed == PlayerStates.hoverRight) {
+                    ChangeAnimationState(TOLAND_R);
+                    playerStateLastDisplayed = PlayerStates.landedRight;
+                } else {
+                    ChangeAnimationState(LANDED_R);
+                    playerStateLastDisplayed = PlayerStates.landedRight;
+                }
                 break;
             case PlayerStates.landedLeft:
-                ChangeAnimationState(LANDED_L);
-                break;
+                if(playerStateLastDisplayed == PlayerStates.landedLeft) {
+                    break;
+                }
+                if(playerStateLastDisplayed == PlayerStates.hoverLeft) {
+                    ChangeAnimationState(TOLAND_L);
+                    playerStateLastDisplayed = PlayerStates.landedLeft;
+                    break;
+                } else {
+                    ChangeAnimationState(LANDED_L);
+                    playerStateLastDisplayed = PlayerStates.landedLeft;
+                    break;
+                }
             case PlayerStates.hoverLeft:
-                ChangeAnimationState(HOVER_L);
-                break;
+                if(playerStateLastDisplayed == PlayerStates.hoverLeft) {
+                    break;
+                }
+                if(playerStateLastDisplayed == PlayerStates.landedLeft) {
+                    ChangeAnimationState(TOHOVER_L);
+                    playerStateLastDisplayed = PlayerStates.hoverLeft;
+                    break;
+                } else if (playerStateLastDisplayed == PlayerStates.flyLeft) {
+                    ChangeAnimationState(FTOHOVER_L);
+                    playerStateLastDisplayed = PlayerStates.hoverLeft;
+                    break;
+                } else {
+                    ChangeAnimationState(HOVER_L);
+                    playerStateLastDisplayed = PlayerStates.hoverLeft;
+                    break;
+                }
             case PlayerStates.hoverRight:
-                ChangeAnimationState(HOVER_R);
+                if(playerStateLastDisplayed == PlayerStates.hoverRight) {
+                    break;
+                }
+                if(playerStateLastDisplayed == PlayerStates.landedRight) {
+                    ChangeAnimationState(TOHOVER_R);
+                    playerStateLastDisplayed = PlayerStates.hoverRight;
+                } else if (playerStateLastDisplayed == PlayerStates.flyRight) {
+                    ChangeAnimationState(FTOHOVER_R);
+                    playerStateLastDisplayed = PlayerStates.hoverRight;
+                } else {
+                    ChangeAnimationState(HOVER_R);
+                    playerStateLastDisplayed = PlayerStates.hoverRight;
+                }
                 break;
             case PlayerStates.flyLeft:
-                ChangeAnimationState(FLY_L);
+                if(playerStateLastDisplayed == PlayerStates.flyLeft) {
+                    break;
+                }
+                if(playerStateLastDisplayed == PlayerStates.hoverLeft) {
+                    ChangeAnimationState(TOFLY_L);
+                    playerStateLastDisplayed = PlayerStates.flyLeft;
+                } else {
+                    ChangeAnimationState(FLY_L);
+                    playerStateLastDisplayed = PlayerStates.flyLeft;
+                }
                 break;
             case PlayerStates.flyRight:
-                ChangeAnimationState(FLY_R);
+                if(playerStateLastDisplayed == PlayerStates.flyRight) {
+                    break;
+                }
+                if(playerStateLastDisplayed == PlayerStates.hoverRight) {
+                    ChangeAnimationState(TOFLY_R);
+                    playerStateLastDisplayed = PlayerStates.flyRight;
+                } else {
+                    ChangeAnimationState(FLY_R);
+                    playerStateLastDisplayed = PlayerStates.flyRight;
+                }
                 break;
             
         }
