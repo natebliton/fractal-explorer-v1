@@ -140,11 +140,10 @@ public class PlayerMover : MonoBehaviour
             }
 
         }
-        if(xIn != 0 || yIn != 0) {
-            print(xIn + " " + yIn + " " + vel.magnitude + " " + vel.x);
-            print(playerState);
-        }
-
+        // if(xIn != 0 || yIn != 0) {
+        //     print(xIn + " " + yIn + " " + vel.magnitude + " " + vel.x);
+        //     print(playerState);
+        // }
 
     }
 
@@ -154,7 +153,9 @@ public class PlayerMover : MonoBehaviour
         print(hit);
         float angle = Vector3.Angle(hit, Vector3.up);
 
-        if (Mathf.Approximately(angle, 0))
+        // print("angle of impact: " + Mathf.Abs(angle - 0));
+
+        if (Mathf.Abs(angle - 0) < 45)
         {
             //Down
            print("Landing");
