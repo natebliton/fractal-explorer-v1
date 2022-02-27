@@ -76,7 +76,12 @@ public class WorldRevealer : MonoBehaviour
         updateDisplay();
     }
 
-    private void OnCollisionEnter2D(Collision2D other) {
+    /// <summary>
+    /// When Player flies over object hiding a world, 
+    /// this toggles whether its world is revealed
+    /// </summary>
+    /// <param name="coll"></param>
+    private void OnTriggerEnter2D(Collider2D coll) {
         if(state == WorldState.hidden || state == WorldState.hiding){
             state = WorldState.revealing; 
         } 
