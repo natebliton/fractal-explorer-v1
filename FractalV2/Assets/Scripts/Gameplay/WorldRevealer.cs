@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class WorldRevealer : MonoBehaviour
 {
-    public GameObject hiddenWorld;
+    [SerializeField]
+    private GameObject hiddenWorld;
 
     SpriteRenderer hiderRenderer;
     SpriteRenderer worldRenderer;

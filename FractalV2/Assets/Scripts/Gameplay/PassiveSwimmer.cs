@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PassiveSwimmer : MonoBehaviour
 {
-    public float swimSpeed = 1f;
+    [SerializeField]
+    private float swimSpeed = 0.1f;
     Rigidbody2D rb2D;
     Timer timer;
     bool pushSwim = false;
