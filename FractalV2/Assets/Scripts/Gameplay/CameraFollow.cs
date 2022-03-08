@@ -18,6 +18,8 @@ public class CameraFollow : MonoBehaviour
     private float camHeight;
     private float camWidth;
 
+    private float offScreenThreshold = 1.0f;
+
     #endregion
 
 
@@ -59,6 +61,7 @@ public class CameraFollow : MonoBehaviour
                 mainCamera.transform.position.z);
             clampCamera();
         }
+        checkOffscreen();
     }
 
     // will clamp camera to not go outside of world bounds
@@ -68,5 +71,25 @@ public class CameraFollow : MonoBehaviour
         mainCamera.transform.position = new Vector3(camX, camY, this.transform.position.z);
     }    
 
+    private bool checkOffscreen(){
+        if(playerTransform.position.x < (xMin - offScreenThreshold)){
+            print("offscreen left");
+            MenuManager.GoToMenu(MenuName.Main);
+            return true;
+        } else if (playerTransform.position.x > (xMax + offScreenThreshold)){
+            print("offscreen right");
+            MenuManager.GoToMenu(MenuName.Main);
+            return true;
+        } else if (playerTransform.position.y < (yMin - offScreenThreshold)){
+            print("offscreen down");
+            MenuManager.GoToMenu(MenuName.Main);
+            return true;
+        } else if(playerTransform.position.y > (yMax + offScreenThreshold)){
+            print("offscreen up");
+            MenuManager.GoToMenu(MenuName.Main);
+            return true;
+        }
+        return false;
+    }
     #endregion
 }
