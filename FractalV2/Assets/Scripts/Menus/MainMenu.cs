@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour
       //  AudioManager.Play(AudioClipName.MenuButtonClick);
         // go
         print("going to GamePlay");
-        SceneManager.LoadScene("GamePlay");
+        SceneManager.LoadScene("Scenes/Islands/Island1");
     }
 
     /// <summary>
