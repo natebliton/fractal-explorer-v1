@@ -5,6 +5,12 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     #region Fields
+    [SerializeField]
+    GameObject sceneFader;
+
+    SceneFader sceneFaderScript;
+
+
 
     Transform playerTransform;
     private Camera mainCamera;
@@ -35,6 +41,7 @@ public class CameraFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        sceneFaderScript = sceneFader.GetComponent<SceneFader>();
         playerTransform = GameObject.FindGameObjectWithTag(cameraFollowingTag).GetComponent<Transform>();
         mapBoundaryCollider = GameObject.FindGameObjectWithTag("mapBoundaryObject").GetComponent<BoxCollider2D>();
         mainCamera = GetComponent<Camera>();
@@ -74,22 +81,27 @@ public class CameraFollow : MonoBehaviour
     private bool checkOffscreen(){
         if(playerTransform.position.x < (xMin - offScreenThreshold)){
             print("offscreen left");
-            MenuManager.GoToMenu(MenuName.Main);
+            goToMainMenu();
             return true;
         } else if (playerTransform.position.x > (xMax + offScreenThreshold)){
             print("offscreen right");
-            MenuManager.GoToMenu(MenuName.Main);
+            goToMainMenu();
             return true;
         } else if (playerTransform.position.y < (yMin - offScreenThreshold)){
             print("offscreen down");
-            MenuManager.GoToMenu(MenuName.Main);
+            goToMainMenu();
             return true;
         } else if(playerTransform.position.y > (yMax + offScreenThreshold)){
             print("offscreen up");
-            MenuManager.GoToMenu(MenuName.Main);
+            goToMainMenu();
             return true;
         }
         return false;
+    }
+
+    private void goToMainMenu() {
+        sceneFaderScript.LoadNextScene("MainMenu");
+        //MenuManager.GoToMenu(MenuName.Main);
     }
     #endregion
 }
