@@ -58141,6 +58141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenWorld: {fileID: 725685329}
+  destinationWorld: 0
   alphaDuration: 1
 --- !u!70 &473081053
 CapsuleCollider2D:
@@ -58373,6 +58374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenWorld: {fileID: 834471426}
+  destinationWorld: 0
   alphaDuration: 1
 --- !u!58 &517641202
 CircleCollider2D:
@@ -58665,6 +58667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenWorld: {fileID: 59184565}
+  destinationWorld: 0
   alphaDuration: 1
 --- !u!58 &619364255
 CircleCollider2D:
@@ -59311,6 +59314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenWorld: {fileID: 1120290698}
+  destinationWorld: 0
   alphaDuration: 1
 --- !u!58 &803706170
 CircleCollider2D:
@@ -59754,6 +59758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenWorld: {fileID: 1605549485}
+  destinationWorld: 0
   alphaDuration: 1
 --- !u!58 &945143074
 CircleCollider2D:
@@ -59870,6 +59875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenWorld: {fileID: 2061090450}
+  destinationWorld: 0
   alphaDuration: 1
 --- !u!58 &952059030
 CircleCollider2D:
@@ -59998,6 +60004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenWorld: {fileID: 458118697}
+  destinationWorld: 0
   alphaDuration: 1
 --- !u!58 &1004106171
 CircleCollider2D:
@@ -60441,6 +60448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenWorld: {fileID: 1453518392}
+  destinationWorld: 0
   alphaDuration: 1
 --- !u!70 &1132362310
 CapsuleCollider2D:
@@ -60557,6 +60565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenWorld: {fileID: 1770583400}
+  destinationWorld: 0
   alphaDuration: 1
 --- !u!58 &1226757371
 CircleCollider2D:
@@ -60851,6 +60860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenWorld: {fileID: 821103622}
+  destinationWorld: 0
   alphaDuration: 1
 --- !u!114 &1294146961
 MonoBehaviour:
@@ -61341,6 +61351,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 305347240, guid: 4abdd9e2fa7c4064b86b4ff1b3916f20, type: 3}
+      propertyPath: transitionTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7490151182611872334, guid: 4abdd9e2fa7c4064b86b4ff1b3916f20, type: 3}
       propertyPath: m_Name
       value: SceneFader
@@ -61856,6 +61870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenWorld: {fileID: 717289786}
+  destinationWorld: 0
   alphaDuration: 1
 --- !u!58 &1595023590
 CircleCollider2D:
@@ -62131,6 +62146,7 @@ GameObject:
   - component: {fileID: 1636870891}
   - component: {fileID: 1636870893}
   - component: {fileID: 1636870890}
+  - component: {fileID: 1636870894}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -62224,6 +62240,18 @@ MonoBehaviour:
   sceneFader: {fileID: 1503200273}
   cameraFollowingTag: Player
   boundingBackground: {fileID: 0}
+--- !u!114 &1636870894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636870889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c19ff29a0b2881849afda07fd9a388ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1662482887
 GameObject:
   m_ObjectHideFlags: 0
@@ -62616,6 +62644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenWorld: {fileID: 1551346433}
+  destinationWorld: 0
   alphaDuration: 1
 --- !u!58 &1942953901
 CircleCollider2D:
@@ -62895,6 +62924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenWorld: {fileID: 1619828633}
+  destinationWorld: 0
   alphaDuration: 1
 --- !u!70 &1955240519
 CapsuleCollider2D:
@@ -63092,6 +63122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenWorld: {fileID: 506657394}
+  destinationWorld: 0
   alphaDuration: 1
 --- !u!58 &2020791278
 CircleCollider2D:
@@ -63497,6 +63528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenWorld: {fileID: 726707154}
+  destinationWorld: 0
   alphaDuration: 1
 --- !u!58 &2098640194
 CircleCollider2D:
@@ -63614,6 +63646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenWorld: {fileID: 1491972218}
+  destinationWorld: 0
   alphaDuration: 1
 --- !u!114 &2107445415
 MonoBehaviour:

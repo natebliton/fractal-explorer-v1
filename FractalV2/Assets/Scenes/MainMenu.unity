@@ -1259,6 +1259,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 305347240, guid: 4abdd9e2fa7c4064b86b4ff1b3916f20, type: 3}
+      propertyPath: transitionTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7490151182611872334, guid: 4abdd9e2fa7c4064b86b4ff1b3916f20, type: 3}
       propertyPath: m_Name
       value: SceneFader

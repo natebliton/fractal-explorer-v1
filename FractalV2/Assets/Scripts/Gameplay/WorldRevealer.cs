@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class WorldRevealer : MonoBehaviour
 {
     [SerializeField]
     private GameObject hiddenWorld;
+
+    [SerializeField]
+    private WorldList.Worlds destinationWorld;
+
+    EnterWorldEvent enterWorldEvent = new EnterWorldEvent();
 
     SpriteRenderer hiderRenderer;
     SpriteRenderer worldRenderer;
@@ -33,6 +38,8 @@ public class WorldRevealer : MonoBehaviour
         worldRenderer = hiddenWorld.GetComponent<SpriteRenderer>();
         hiderRenderer.color = visible;
         worldRenderer.color = invisible;
+
+        EventManager.AddEnterWorldInvoker(this);
     }
 
     // Update is called once per frame
@@ -67,6 +74,8 @@ public class WorldRevealer : MonoBehaviour
             yield return null;
         }
         state = endState;
+
+        enterWorldEvent.Invoke(destinationWorld);
     }
     private void OnMouseDown() {
         if(state == WorldState.hidden || state == WorldState.hiding){
@@ -91,4 +100,14 @@ public class WorldRevealer : MonoBehaviour
     private void updateDisplay() {
         StartCoroutine(FadeWorld(state,alphaDuration));
     }
+
+        /// <summary>
+    /// add enter world event listener
+    /// </summary>
+    /// <param name="listener"></param>
+    public void AddEnterWorldEvent(UnityAction<WorldList.Worlds> listener)
+    {
+        enterWorldEvent.AddListener(listener);
+    }
+
 }

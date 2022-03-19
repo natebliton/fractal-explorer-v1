@@ -10,6 +10,8 @@ public static class EventManager
     static List<HUD> gameOverInvokers = new List<HUD>();
     static List<UnityAction> gameOverListeners = new List<UnityAction>();
 
+    static List<WorldRevealer> enterWorldInvokers = new List<WorldRevealer>();
+    static List<UnityAction<WorldList.Worlds>> enterWorldListeners = new List<UnityAction<WorldList.Worlds>>();
  /*
     static List<FreezerBlock> freezerInvokers = new List<FreezerBlock>();
     static List<UnityAction> freezerListeners = new List<UnityAction>();
@@ -40,7 +42,32 @@ public static class EventManager
 
     #region public methods
 
-    
+        /// <summary>
+    /// ball counting invoker adding
+    /// </summary>
+    /// <param name="script"></param>
+    public static void AddEnterWorldInvoker(WorldRevealer script)
+    {
+        enterWorldInvokers.Add(script);
+        foreach (UnityAction<WorldList.Worlds> listener in enterWorldListeners)
+        {
+            script.AddEnterWorldEvent(listener);
+        }
+    }
+
+    /// <summary>
+    /// ball counting listener adding
+    /// </summary>
+    /// <param name="listener"></param>
+    public static void AddEnterWorldListener(UnityAction<WorldList.Worlds> listener)
+    {
+        enterWorldListeners.Add(listener);
+        foreach (WorldRevealer script in enterWorldInvokers)
+        {
+            script.AddEnterWorldEvent(listener);
+        }
+    }
+
     /// <summary>
     /// game over event invoker adding
     /// </summary>
