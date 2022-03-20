@@ -53,7 +53,7 @@ public class HUD : MonoBehaviour
         displayText = GameObject.FindGameObjectWithTag("DisplayText").GetComponent<Text>();
         displayText.text = "Score: " + currentScore + "  Balls Left: " + ballsLeft;
 
-        EventManager.AddGameOverInvoker(this);
+       // EventManager.AddGameOverInvoker(this);
 
         /*
         EventManager.AddPointsAddedListener(AddPoints);

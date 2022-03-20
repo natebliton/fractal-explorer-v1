@@ -12,6 +12,9 @@ public static class EventManager
 
     static List<WorldRevealer> enterWorldInvokers = new List<WorldRevealer>();
     static List<UnityAction<WorldList.Worlds>> enterWorldListeners = new List<UnityAction<WorldList.Worlds>>();
+
+    static List<WorldRevealer> zoomCameraInvokers = new List<WorldRevealer>();
+    static List<UnityAction<float>> zoomCameraListeners = new List<UnityAction<float>>();
  /*
     static List<FreezerBlock> freezerInvokers = new List<FreezerBlock>();
     static List<UnityAction> freezerListeners = new List<UnityAction>();
@@ -43,7 +46,7 @@ public static class EventManager
     #region public methods
 
         /// <summary>
-    /// ball counting invoker adding
+    /// add enter world invoker
     /// </summary>
     /// <param name="script"></param>
     public static void AddEnterWorldInvoker(WorldRevealer script)
@@ -56,7 +59,7 @@ public static class EventManager
     }
 
     /// <summary>
-    /// ball counting listener adding
+    /// enter world listener adding
     /// </summary>
     /// <param name="listener"></param>
     public static void AddEnterWorldListener(UnityAction<WorldList.Worlds> listener)
@@ -68,31 +71,30 @@ public static class EventManager
         }
     }
 
-    /// <summary>
-    /// game over event invoker adding
+        /// <summary>
+    /// add camera zoom invoker
     /// </summary>
     /// <param name="script"></param>
-    public static void AddGameOverInvoker(HUD script)
+    public static void AddZoomCameraInvoker(WorldRevealer script)
     {
-        gameOverInvokers.Add(script);
-        foreach (UnityAction listener in gameOverListeners)
+        zoomCameraInvokers.Add(script);
+        foreach (UnityAction<float> listener in zoomCameraListeners)
         {
-            script.AddGameOverEventListener(listener);
+            script.AddZoomCameraEvent(listener);
         }
     }
 
     /// <summary>
-    /// game over event listener adding
+    /// enter world listener adding
     /// </summary>
     /// <param name="listener"></param>
-    public static void AddGameOverListener(UnityAction listener)
+    public static void AddZoomCameraListener(UnityAction<float> listener)
     {
-        gameOverListeners.Add(listener);
-        foreach (HUD script in gameOverInvokers)
+        zoomCameraListeners.Add(listener);
+        foreach (WorldRevealer script in zoomCameraInvokers)
         {
-            script.AddGameOverEventListener(listener);
+            script.AddZoomCameraEvent(listener);
         }
-
     }
 
 /*

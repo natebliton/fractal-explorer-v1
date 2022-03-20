@@ -11,6 +11,7 @@ public class WorldRevealer : MonoBehaviour
     private WorldList.Worlds destinationWorld;
 
     EnterWorldEvent enterWorldEvent = new EnterWorldEvent();
+    ZoomCameraEvent zoomCameraEvent = new ZoomCameraEvent();
 
     SpriteRenderer hiderRenderer;
     SpriteRenderer worldRenderer;
@@ -40,6 +41,7 @@ public class WorldRevealer : MonoBehaviour
         worldRenderer.color = invisible;
 
         EventManager.AddEnterWorldInvoker(this);
+        EventManager.AddZoomCameraInvoker(this);
     }
 
     // Update is called once per frame
@@ -74,8 +76,10 @@ public class WorldRevealer : MonoBehaviour
             yield return null;
         }
         state = endState;
-
-        enterWorldEvent.Invoke(destinationWorld);
+        if(destinationWorld != WorldList.Worlds.NULL){
+            enterWorldEvent.Invoke(destinationWorld);
+            zoomCameraEvent.Invoke(0.95f);
+        }
     }
     private void OnMouseDown() {
         if(state == WorldState.hidden || state == WorldState.hiding){
@@ -108,6 +112,15 @@ public class WorldRevealer : MonoBehaviour
     public void AddEnterWorldEvent(UnityAction<WorldList.Worlds> listener)
     {
         enterWorldEvent.AddListener(listener);
+    }
+
+    /// <summary>
+    /// add Zoom camera Event listener
+    /// </summary>
+    /// <param name="listener"></param>
+    public void AddZoomCameraEvent(UnityAction<float> listener)
+    {
+        zoomCameraEvent.AddListener(listener);
     }
 
 }
