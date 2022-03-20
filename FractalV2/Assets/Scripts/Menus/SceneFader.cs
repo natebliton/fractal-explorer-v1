@@ -16,7 +16,10 @@ public class SceneFader : MonoBehaviour
         StartCoroutine(LoadScene(nextScene));
     }
     public void EnterWorld(WorldList.Worlds worldToEnter){
-        StartCoroutine(LoadScene(WorldList.WorldSceneNames[(int)worldToEnter]));
+        // NULL check while I add worlds
+        if(WorldList.WorldSceneNames[(int)worldToEnter] != "NULL") {
+           StartCoroutine(LoadScene(WorldList.WorldSceneNames[(int)worldToEnter]));
+        }
     }
     IEnumerator LoadScene(string nextScene) {
         transition.SetTrigger("Start");

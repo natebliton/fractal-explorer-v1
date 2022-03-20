@@ -5,6 +5,7 @@ using UnityEngine;
 public static class WorldList
 {
     public enum Worlds {
+        NULL,
         Beach,
         CDGarden,
         GardenAndSwirls,
@@ -36,6 +37,7 @@ public static class WorldList
         AirDragonAndCity
     }
     public static string[] WorldSceneNames = {
+        "NULL",
         "Beach",
         "CDGarden",
         "GardenAndSwirls",
