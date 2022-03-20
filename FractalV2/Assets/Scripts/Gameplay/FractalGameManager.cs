@@ -15,7 +15,7 @@ public class FractalGameManager : MonoBehaviour
     void Start()
     {
         // call game over method if game over event is invoked
-        EventManager.AddGameOverListener(GameOver);
+        //EventManager.AddGameOverListener(GameOver);
       //  EventManager.AddBlockDestroyedListener(CheckIfOnlyOneBlockLeft);
     }
 
