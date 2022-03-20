@@ -101,7 +101,7 @@ public class WorldRevealer : MonoBehaviour
         StartCoroutine(FadeWorld(state,alphaDuration));
     }
 
-        /// <summary>
+    /// <summary>
     /// add enter world event listener
     /// </summary>
     /// <param name="listener"></param>
