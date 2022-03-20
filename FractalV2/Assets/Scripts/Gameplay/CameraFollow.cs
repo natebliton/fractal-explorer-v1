@@ -32,8 +32,6 @@ public class CameraFollow : MonoBehaviour
     #region Public Methods
     public string cameraFollowingTag = "Player";
 
-    public GameObject boundingBackground;
-
     #endregion
 
     #region private methods
