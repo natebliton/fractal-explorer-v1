@@ -39576,6 +39576,26 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -12, y: 13, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -11, y: 13, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -10, y: 13, z: 0}
     second:
       serializedVersion: 2
@@ -57738,21 +57758,21 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 1930
+  - m_RefCount: 1932
     m_Data: {fileID: 11400000, guid: fcb058eca2c028346b2254fb094721b0, type: 2}
   - m_RefCount: 84
     m_Data: {fileID: 11400000, guid: 2af6885af03c24d4e9bb1dd682c0d0b1, type: 2}
   - m_RefCount: 3696
     m_Data: {fileID: 11400000, guid: 42474ca3444b1c64cbdaee9326b6e0e7, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 1930
+  - m_RefCount: 1932
     m_Data: {fileID: 21300000, guid: d20cd43861b232c44a6465c11bb38b1c, type: 3}
   - m_RefCount: 84
     m_Data: {fileID: 21300000, guid: b3623aa8a2967dc49a133cc66d3eea36, type: 3}
   - m_RefCount: 3696
     m_Data: {fileID: 21300000, guid: 361785ac9b4daad43b8c857ddf54866a, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 5710
+  - m_RefCount: 5712
     m_Data:
       e00: 1
       e01: 0
@@ -57771,7 +57791,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 5710
+  - m_RefCount: 5712
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -62190,11 +62210,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21d0402099b8041468b0d0fd7655bd40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  maxZoom: 5
-  minZoom: 20
-  sensitivity: 1
-  speed: 30
 --- !u!1 &1662482887
 GameObject:
   m_ObjectHideFlags: 0

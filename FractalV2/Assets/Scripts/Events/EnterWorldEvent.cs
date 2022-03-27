@@ -3,6 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class EnterWorldEvent : UnityEvent<WorldList.Worlds>
+public class EnterWorldEvent : UnityEvent<DestinationList.Worlds>
 {
 }

@@ -10,15 +10,15 @@ public class SceneFader : MonoBehaviour
     public float transitionTime = 1f;
 
     private void Start() {
-        EventManager.AddEnterWorldListener(EnterWorld);
+        EventManager.AddEnterWorldListener(EnterDestination);
     }
     public void LoadNextScene(string nextScene){
         StartCoroutine(LoadScene(nextScene));
     }
-    public void EnterWorld(WorldList.Worlds worldToEnter){
+    public void EnterDestination(DestinationList.Worlds worldToEnter){
         // NULL check while I add worlds
-        if(WorldList.WorldSceneNames[(int)worldToEnter] != "NULL") {
-           StartCoroutine(LoadScene(WorldList.WorldSceneNames[(int)worldToEnter]));
+        if(worldToEnter.ToString() != "NULL") {
+           StartCoroutine(LoadScene(worldToEnter.ToString()));
         }
     }
     IEnumerator LoadScene(string nextScene) {

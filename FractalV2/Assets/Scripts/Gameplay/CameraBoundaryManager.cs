@@ -13,8 +13,8 @@ public class CameraBoundaryManager : MonoBehaviour
     Transform playerTransform;
     private Camera mainCamera;
 
-    [SerializeField] private IslandList.Islands parentIsland;
-
+    [SerializeField] private DestinationList.Islands parentIsland;
+    private int parentIslandInt;
     // this collider's dimensions determine the bounds of the camera in this scene
 
     private BoxCollider2D mapBoundaryCollider;
@@ -54,7 +54,7 @@ public class CameraBoundaryManager : MonoBehaviour
         print(xMax);
         print(yMin);
         print(yMax);
-        
+        parentIslandInt = (int)parentIsland;
     }
 
     // Update is called once per frame
@@ -86,7 +86,8 @@ public class CameraBoundaryManager : MonoBehaviour
     }
 
     private void goToParent() {
-        string nextScene = IslandList.IslandSceneNames[(int)parentIsland];
+        
+        string nextScene = parentIsland.ToString();
         if(nextScene != "NULL") {
             sceneFaderScript.LoadNextScene(nextScene);        
         } else {

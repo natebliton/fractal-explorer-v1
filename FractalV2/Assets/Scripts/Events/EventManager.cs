@@ -11,7 +11,7 @@ public static class EventManager
     static List<UnityAction> gameOverListeners = new List<UnityAction>();
 
     static List<WorldRevealer> enterWorldInvokers = new List<WorldRevealer>();
-    static List<UnityAction<WorldList.Worlds>> enterWorldListeners = new List<UnityAction<WorldList.Worlds>>();
+    static List<UnityAction<DestinationList.Worlds>> enterWorldListeners = new List<UnityAction<DestinationList.Worlds>>();
 
     static List<WorldRevealer> zoomCameraInvokers = new List<WorldRevealer>();
     static List<UnityAction<float>> zoomCameraListeners = new List<UnityAction<float>>();
@@ -52,7 +52,7 @@ public static class EventManager
     public static void AddEnterWorldInvoker(WorldRevealer script)
     {
         enterWorldInvokers.Add(script);
-        foreach (UnityAction<WorldList.Worlds> listener in enterWorldListeners)
+        foreach (UnityAction<DestinationList.Worlds> listener in enterWorldListeners)
         {
             script.AddEnterWorldEvent(listener);
         }
@@ -62,8 +62,7 @@ public static class EventManager
     /// enter world listener adding
     /// </summary>
     /// <param name="listener"></param>
-    public static void AddEnterWorldListener(UnityAction<WorldList.Worlds> listener)
-    {
+    public static void AddEnterWorldListener(UnityAction<DestinationList.Worlds> listener) {
         enterWorldListeners.Add(listener);
         foreach (WorldRevealer script in enterWorldInvokers)
         {

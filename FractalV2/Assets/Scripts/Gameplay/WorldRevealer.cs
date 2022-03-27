@@ -8,7 +8,7 @@ public class WorldRevealer : MonoBehaviour
     private GameObject hiddenWorld;
 
     [SerializeField]
-    private WorldList.Worlds destinationWorld;
+    private DestinationList.Worlds destinationWorld;
 
     EnterWorldEvent enterWorldEvent = new EnterWorldEvent();
     ZoomCameraEvent zoomCameraEvent = new ZoomCameraEvent();
@@ -76,7 +76,7 @@ public class WorldRevealer : MonoBehaviour
             yield return null;
         }
         state = endState;
-        if(destinationWorld != WorldList.Worlds.NULL){
+        if(destinationWorld != DestinationList.Worlds.NULL){
             enterWorldEvent.Invoke(destinationWorld);
             zoomCameraEvent.Invoke(0.95f);
         }
@@ -109,7 +109,7 @@ public class WorldRevealer : MonoBehaviour
     /// add enter world event listener
     /// </summary>
     /// <param name="listener"></param>
-    public void AddEnterWorldEvent(UnityAction<WorldList.Worlds> listener)
+    public void AddEnterWorldEvent(UnityAction<DestinationList.Worlds> listener)
     {
         enterWorldEvent.AddListener(listener);
     }

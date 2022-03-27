@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class WorldList
+public static class DestinationList
 {
     public enum Worlds {
         NULL,
@@ -36,34 +36,14 @@ public static class WorldList
         GardenFountain,
         AirDragonAndCity
     }
-    public static string[] WorldSceneNames = {
-        "NULL",
-        "Beach",
-        "CDGarden",
-        "GardenAndSwirls",
-        "GardenBridge",
-        "GardenGlass",
-        "GardenHome",
-        "GardenPeach",
-        "GardenPurple",
-        "GardenRedAndPurple",
-        "GardenRopes",
-        "GardenSparkle",
-        "GardenTower",
-        "TreeForOwls",
-        "WaterAndEarth",
-        "DragonCave",
-        "SparklePond",
-        "StarryNight",
-        "HurricaneGarden",
-        "FlowerGenerator",
-        "NightFlowerbed",
-        "BatCavern",
-        "Dawn",
-        "Volcano",
-        "GardenBuds",
-        "SparklePalms",
-        "GardenFountain",
-        "AirDragonAndCity"
-    };
+
+    public enum Islands {
+        NULL,
+        Island1,
+        Island2,
+        Island3,
+        Island4,
+        Island5,
+        Island6
+    }
 }
