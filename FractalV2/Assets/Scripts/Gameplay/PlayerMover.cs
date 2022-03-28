@@ -25,11 +25,33 @@ public class PlayerMover : MonoBehaviour
     private const string TOLAND_L = "me-h-toland-L";
     private const string TOLAND_R = "me-h-toland-R";
     
-        
     
-    public float movementSpeed = 3.0f;
+    [SerializeField]
+    private float characterScale = 1;
+
+    private float movementSpeed = 1.0f;
+
+    [SerializeField]
+    /// <summary>
+    /// How quickly the bird can accelerate
+    /// </summary>
+    private float birdAcceleration = 2f;
+
+    [SerializeField]
+    /// <summary>
+    /// Max speed for the bird
+    /// </summary>
+    private float birdMaxSpeed = 2f;
+
 
     private Vector2 movement = new Vector2();
+    private bool traveling = false;
+
+    /// <summary>
+    /// distance to target location at start of journey
+    /// </summary>
+    private float initialTargetDistance = 0;
+
 
 
     private Rigidbody2D rb2D;
@@ -41,6 +63,8 @@ public class PlayerMover : MonoBehaviour
 
     [SerializeField]
     GameObject prefabJumpFire;
+
+    Vector2 clickedPosition;
 
     enum PlayerStates
     {
@@ -96,6 +120,7 @@ public class PlayerMover : MonoBehaviour
         // print("adding event invoker");
         // EventManager.AddPlayerDamageEventInvoker(this);
         //print(EventManager.playerDamageInvokers.Count);
+        gameObject.GetComponent<Transform>().localScale = new Vector3(characterScale, characterScale);
     }
 
     // Update is called once per frame
@@ -113,14 +138,27 @@ public class PlayerMover : MonoBehaviour
     {
         // check if there is a new target location, 
         // and if so, set velocity to move in that direction
-
+        if(Input.GetMouseButtonDown(0)) {
+            clickedPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                        // Movement for main movement
+            // Movement2 for accelleration
+            StopCoroutine("Movement2");
+            StartCoroutine("Movement2", clickedPosition);
+        }
         // or, get input from keyboard
         float xIn = Input.GetAxisRaw("Horizontal");
         float yIn = Input.GetAxisRaw("Vertical");
-        movement = new Vector3(xIn, yIn);
-        movement *= movementSpeed;
-        rb2D.AddForce(movement, ForceMode2D.Force);
-        
+
+        if(yIn != 0 || xIn != 0){
+            StopCoroutine("Movement2");
+            clickedPosition = (Vector2)transform.position;
+
+            movement = new Vector3(xIn, yIn);
+            movement *= movementSpeed;
+            rb2D.AddForce(movement, ForceMode2D.Force);
+            ClampSpeed();
+        }
+
         Vector2 vel = rb2D.velocity;
         if(vel.magnitude > 0f) {
             if(vel.magnitude > 3f) {
@@ -145,6 +183,85 @@ public class PlayerMover : MonoBehaviour
         //     print(playerState);
         // }
 
+    }
+
+    private void ClampSpeed(){
+        if(rb2D.velocity.magnitude > birdMaxSpeed){
+            rb2D.velocity = rb2D.velocity.normalized * birdMaxSpeed;
+        }
+    }
+
+    /// <summary>
+    /// Coroutine to move the Bus towards its target destination
+    /// speed capped by busMaxSpeed, with visible property BusMaxSpeed
+    /// </summary>
+    IEnumerator Movement2(Vector2 target)
+    {
+        print("going to " + target.x + " " + target.y);
+        traveling = true;
+        Vector2 initialPosition = transform.position;
+        initialTargetDistance = Vector2.Distance(initialPosition, target);
+        //float speed = 0;
+        //float progress = 0;
+        Vector2 travelingForce;
+        //Vector2.ClampMagnitude()
+        //while (Vector2.Distance(transform.position, target) > 0.05f)
+        while (traveling)
+        {
+            //print(rb2D.velocity.x);
+            //progress = ProgressToCity;
+
+           // speed = MovementSpeed * Time.deltaTime;
+            // if (progress < initialTargetDistance / 2)
+            // {
+            //     speed += birdAcceleration;
+            //     if(speed > birdMaxSpeed)
+            //     {
+            //         speed = birdMaxSpeed;
+            //     }
+            // }
+
+            //transform.position = Vector2.Lerp(transform.position, target, MovementSpeed * Time.deltaTime);
+            //transform.position = Vector2.Lerp(transform.position, target, speed);
+            //Vector2(transform.position.x - target.x,transform.position.y - target.y);
+            travelingForce = new Vector2(target.x - transform.position.x, target.y - transform.position.y);
+            travelingForce *= 10*(Vector2.Distance(transform.position, target));
+            travelingForce = Vector2.ClampMagnitude(travelingForce, birdAcceleration);
+            rb2D.AddForce(travelingForce,ForceMode2D.Force);
+            rb2D.velocity = characterScale * Vector2.ClampMagnitude(rb2D.velocity, birdMaxSpeed);
+            //Vector2.Angle(transform.position, target)
+            yield return null;
+        }
+
+        print("target reached");
+
+        traveling = false;
+
+    }
+
+
+    /// <summary>
+    /// Calculates bus speed
+    /// </summary>
+    /// <param name="currentDistance">current distance to target</param>
+    /// <param name="maxDistance">initial max distance to target</param>
+    /// <returns></returns>
+    float calculateSpeed(float currentDistance, float maxDistance)
+    {
+        float accelDistance = maxDistance / 10f;
+
+        if (currentDistance < accelDistance)
+        {
+            return (currentDistance / accelDistance) * birdMaxSpeed;
+        }
+        else if (maxDistance - currentDistance < accelDistance)
+        {
+            return birdMaxSpeed - (birdMaxSpeed * (maxDistance - currentDistance));
+        }
+        else
+        {
+            return birdMaxSpeed;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

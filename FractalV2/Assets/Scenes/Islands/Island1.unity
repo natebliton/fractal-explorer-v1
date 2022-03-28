@@ -60939,29 +60939,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3306472246880299654, guid: 5325e7ea44f940841b6139d828e0ba39, type: 3}
-      propertyPath: movementSpeed
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 3306472246880299674, guid: 5325e7ea44f940841b6139d828e0ba39, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3306472246880299674, guid: 5325e7ea44f940841b6139d828e0ba39, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 3306472246880299674, guid: 5325e7ea44f940841b6139d828e0ba39, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 3306472246880299674, guid: 5325e7ea44f940841b6139d828e0ba39, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3306472246880299674, guid: 5325e7ea44f940841b6139d828e0ba39, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3306472246880299674, guid: 5325e7ea44f940841b6139d828e0ba39, type: 3}
       propertyPath: m_LocalPosition.z
@@ -60998,10 +60986,6 @@ PrefabInstance:
     - target: {fileID: 3306472246880299676, guid: 5325e7ea44f940841b6139d828e0ba39, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 3306472246880299676, guid: 5325e7ea44f940841b6139d828e0ba39, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5325e7ea44f940841b6139d828e0ba39, type: 3}
@@ -62198,6 +62182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c19ff29a0b2881849afda07fd9a388ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerScale: 0.25
 --- !u!114 &1636870895
 MonoBehaviour:
   m_ObjectHideFlags: 0

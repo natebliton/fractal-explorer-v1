@@ -154,7 +154,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32ded803ec1e6e4dad81c6161a4a4be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 3
+  characterScale: 1
+  birdAcceleration: 2
+  birdMaxSpeed: 4
   prefabJumpFire: {fileID: 0}
   verticalState: 0
   playerState: 0
