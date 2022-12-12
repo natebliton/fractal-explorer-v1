@@ -10,10 +10,12 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     GameObject levelLoader;
 
+    LibPdInstance libPdInstance;
     SceneFader sceneFaderScript;
 
     private void Start() {
-      sceneFaderScript = levelLoader.GetComponent<SceneFader>();
+        sceneFaderScript = levelLoader.GetComponent<SceneFader>();
+        libPdInstance = GameObject.FindGameObjectWithTag("sound").GetComponent<LibPdInstance>();
     }
 
     /// <summary>
@@ -22,8 +24,9 @@ public class MainMenu : MonoBehaviour
     public void HandlePlayButtonOnClickEvent()
     {
         // play click sound
-      //  AudioManager.Play(AudioClipName.MenuButtonClick);
+        //  AudioManager.Play(AudioClipName.MenuButtonClick);
         // go
+        libPdInstance.SendBang("click1");
         print("going to GamePlay");
         //SceneManager.LoadScene("Scenes/Islands/Island1");
         sceneFaderScript.LoadNextScene("Scenes/Islands/Island1");
@@ -35,8 +38,9 @@ public class MainMenu : MonoBehaviour
     public void HandleQuitButtonOnClickEvent()
     {
         // play click sound
-      //  AudioManager.Play(AudioClipName.MenuButtonClick);
+        //  AudioManager.Play(AudioClipName.MenuButtonClick);
         // go
+        libPdInstance.SendBang("click1");
         print("Quitting!");
         Application.Quit();
     }
@@ -47,10 +51,11 @@ public class MainMenu : MonoBehaviour
     public void HandleHelpButtonOnClickEvent()
     {
         // play click sound
-      //  AudioManager.Play(AudioClipName.MenuButtonClick);
+        //  AudioManager.Play(AudioClipName.MenuButtonClick);
         // go
-      print("Quitting!");
-      SceneManager.LoadScene("HelpMenu");
+        libPdInstance.SendBang("click1");
+        print("Help!");
+        SceneManager.LoadScene("HelpMenu");
       //levelLoaderScript.LoadNextScene("HelpMenu");
       
     }
