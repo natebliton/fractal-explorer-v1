@@ -1,0 +1,10 @@
+#N canvas 182 182 307 142 12;
+#X obj 25 20 key;
+#X obj 25 47 spigot;
+#X obj 82 47 tgl 19 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0 1;
+#X obj 25 73 outlet;
+#X obj 82 19 inlet;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 1;
+#X connect 4 0 2 0;

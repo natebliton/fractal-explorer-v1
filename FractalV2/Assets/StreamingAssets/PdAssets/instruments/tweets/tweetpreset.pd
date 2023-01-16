@@ -1,0 +1,8 @@
+#N canvas 257 247 567 441 12;
+#X obj 122 291 ../util/generalOutput;
+#X obj 214 141 bng 19 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
+#X obj 141 214 tweet 350;
+#X msg 143 181 800;
+#X connect 1 0 2 0;
+#X connect 2 0 0 2;
+#X connect 3 0 2 0;

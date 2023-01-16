@@ -1,0 +1,17 @@
+#N canvas 614 217 344 283 12;
+#X obj 68 31 inlet trigger;
+#X obj 68 55 t b b;
+#X obj 68 79 f \$1;
+#X obj 68 103 pack f f;
+#X obj 68 151 vline~;
+#X obj 68 175 outlet~;
+#X obj 113 80 f \$2;
+#X msg 68 127 0 0 0 \, 1 \$1 0 \, 0 \$2 \$1;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 6 0;
+#X connect 2 0 3 0;
+#X connect 3 0 7 0;
+#X connect 4 0 5 0;
+#X connect 6 0 3 1;
+#X connect 7 0 4 0;

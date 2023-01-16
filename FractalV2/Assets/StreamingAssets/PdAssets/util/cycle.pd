@@ -1,0 +1,15 @@
+#N canvas 64 64 450 300 12;
+#X obj 72 12 inlet;
+#X obj 136 12 inlet;
+#X obj 72 56 metro 15;
+#X obj 72 80 f 0;
+#X obj 72 104 mod \$1;
+#X obj 72 128 outlet;
+#X obj 104 79 + 1;
+#X connect 0 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 6 0;
+#X connect 4 0 5 0;
+#X connect 6 0 3 1;
