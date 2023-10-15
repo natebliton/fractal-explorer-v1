@@ -2,30 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Note 
+public class Note
 {
     private int channel;
     private float pitchMIDI;
     private float velocityMIDI;
     private float startTimeTics;
     private float durationTics;
-  //  private string target;
+    //  private string target;
     private state noteState;
 
-    private enum state
+    public enum state
     {
-        stopped,
-        playing
+        ready,
+        playing,
+        done
     }
 
-/// <summary>
-/// 
-/// </summary>
-/// <param name="channel"></param>
-/// <param name="pitchIn"></param>
-/// <param name="velocityIn"></param>
-/// <param name="startTimeTicsIn"></param>
-/// <param name="durationIn"></param>
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="channel"></param>
+    /// <param name="pitchIn"></param>
+    /// <param name="velocityIn"></param>
+    /// <param name="startTimeTicsIn"></param>
+    /// <param name="durationIn"></param>
     public Note(int channelIn, float pitchIn, float velocityIn, float startTimeTicsIn, float durationIn)
     {
         channel = channelIn;
@@ -33,7 +34,7 @@ public class Note
         velocityMIDI = velocityIn;
         startTimeTics = startTimeTicsIn;
         durationTics = durationIn;
-        noteState = state.stopped;
+        noteState = state.ready;
     }
     public int getChannel()
     {
@@ -55,5 +56,19 @@ public class Note
     public float getStartTime()
     {
         return startTimeTics;
+    }
+
+    public state getState() {
+        return noteState;
+    }
+
+    public void setState(state state)
+    {
+        noteState = state;
+    }
+
+    public void Play()
+    {
+        noteState = state.playing;
     }
 }

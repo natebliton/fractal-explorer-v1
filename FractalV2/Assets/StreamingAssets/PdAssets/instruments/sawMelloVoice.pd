@@ -25,6 +25,7 @@
 #X obj 79 386 outlet~;
 #X floatatom 159 151 5 0 0 0 - - - 0;
 #X obj 96 305 ../util/asdenv 10 100 1000;
+#X floatatom 54 104 5 0 0 0 - - - 0;
 #X connect 0 0 3 0;
 #X connect 0 0 4 0;
 #X connect 1 0 16 0;
@@ -53,3 +54,4 @@
 #X connect 21 0 22 0;
 #X connect 22 0 10 0;
 #X connect 25 0 2 1;
+#X connect 26 0 0 0;

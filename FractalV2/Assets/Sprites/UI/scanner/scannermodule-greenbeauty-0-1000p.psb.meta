@@ -27,7 +27,7 @@ ScriptedImporter:
     streamingMipmaps: 1
     streamingMipmapsPriority: 0
     vTOnly: 0
-    ignoreMasterTextureLimit: 0
+    ignoreMipmapLimit: 0
     nPOTScale: 1
     sRGBTexture: 1
     spriteMode: 2
@@ -345,7 +345,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 1291, y: 963}
-    spritePosition: {x: 608, y: 947}
+    spritePosition: {x: 609, y: 948}
   - name: emptyBattery
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -478,6 +478,7 @@ ScriptedImporter:
   keepDupilcateSpriteName: 0
   skeletonAssetReferenceID: 
   padding: 4
+  spriteSizeExpand: 0
   spriteCategoryList:
     categories: []
   spritePackingTag: 
@@ -777,6 +778,8 @@ ScriptedImporter:
   sharedRigPSDLayers: []
   pSDLayerImportSetting: []
   importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  spriteSizeExpandChanged: 0
   generateGOHierarchy: 0
   textureAssetName: scannermodule-greenbeauty-0-1000p Texture
   prefabAssetName: scannermodule-greenbeauty-0-1000p Prefab
