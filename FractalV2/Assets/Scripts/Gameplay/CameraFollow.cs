@@ -8,6 +8,18 @@ public class CameraFollow : MonoBehaviour
     [SerializeField]
     GameObject sceneFader;
 
+    [SerializeField]
+    DestinationList.Islands LeftDestination;
+
+    [SerializeField]
+    DestinationList.Islands RightDestination;
+
+    [SerializeField]
+    DestinationList.Islands UpDestination;
+
+    [SerializeField]
+    DestinationList.Islands DownDestination;
+
     SceneFader sceneFaderScript;
 
 
@@ -79,22 +91,27 @@ public class CameraFollow : MonoBehaviour
     private bool checkOffscreen(){
         if(playerTransform.position.x < (xMin - offScreenThreshold)){
             print("offscreen left");
-            goToMainMenu();
+            goToScene(LeftDestination.ToString());
             return true;
         } else if (playerTransform.position.x > (xMax + offScreenThreshold)){
             print("offscreen right");
-            goToMainMenu();
+            goToScene(LeftDestination.ToString());
             return true;
         } else if (playerTransform.position.y < (yMin - offScreenThreshold)){
             print("offscreen down");
-            goToMainMenu();
+            goToScene(LeftDestination.ToString());
             return true;
         } else if(playerTransform.position.y > (yMax + offScreenThreshold)){
             print("offscreen up");
-            goToMainMenu();
+            goToScene(LeftDestination.ToString());
             return true;
         }
         return false;
+    }
+    private void goToScene(string destination)
+    {
+        sceneFaderScript.LoadNextScene(destination);
+        //MenuManager.GoToMenu(MenuName.Main);
     }
 
     private void goToMainMenu() {
