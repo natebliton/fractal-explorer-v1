@@ -21,6 +21,7 @@ public class CameraFollow : MonoBehaviour
     DestinationList.Islands DownDestination;
 
     SceneFader sceneFaderScript;
+    PopupManager popupManager;
 
 
 
@@ -37,6 +38,8 @@ public class CameraFollow : MonoBehaviour
     private float camWidth;
 
     private float offScreenThreshold = 1.0f;
+    private float almostOffScreenThreshold = 1.0f;
+
 
     #endregion
 
@@ -52,6 +55,7 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
         sceneFaderScript = sceneFader.GetComponent<SceneFader>();
+        popupManager = GameObject.FindGameObjectWithTag("DirectionalPopup").GetComponent<PopupManager>();
         playerTransform = GameObject.FindGameObjectWithTag(cameraFollowingTag).GetComponent<Transform>();
         mapBoundaryCollider = GameObject.FindGameObjectWithTag("mapBoundaryObject").GetComponent<BoxCollider2D>();
         mainCamera = GetComponent<Camera>();
@@ -78,6 +82,7 @@ public class CameraFollow : MonoBehaviour
                 mainCamera.transform.position.z);
             clampCamera();
         }
+        checkAlmostOffscreen();
         checkOffscreen();
     }
 
@@ -89,23 +94,71 @@ public class CameraFollow : MonoBehaviour
     }    
 
     private bool checkOffscreen(){
-        if(playerTransform.position.x < (xMin - offScreenThreshold)){
+        if (playerTransform.position.x < (xMin - offScreenThreshold))
+        {
             print("offscreen left");
-            goToScene(LeftDestination.ToString());
+            GoLeftScene();
             return true;
         } else if (playerTransform.position.x > (xMax + offScreenThreshold)){
             print("offscreen right");
-            goToScene(LeftDestination.ToString());
+            GoRightScene();
             return true;
         } else if (playerTransform.position.y < (yMin - offScreenThreshold)){
             print("offscreen down");
-            goToScene(LeftDestination.ToString());
+            GoDownScene();
             return true;
         } else if(playerTransform.position.y > (yMax + offScreenThreshold)){
             print("offscreen up");
-            goToScene(LeftDestination.ToString());
+            GoUpScene();
             return true;
         }
+        return false;
+    }
+
+    public void GoLeftScene()
+    {
+        goToScene(LeftDestination.ToString());
+    }
+    public void GoRightScene()
+    {
+        goToScene(RightDestination.ToString());
+    }
+    public void GoDownScene()
+    {
+        goToScene(DownDestination.ToString());
+    }
+    public void GoUpScene()
+    {
+        goToScene(UpDestination.ToString());
+    }
+
+    private bool checkAlmostOffscreen()
+    {
+        if (playerTransform.position.x < (xMin + almostOffScreenThreshold))
+        {
+            print("almost offscreen left");
+            popupManager.SetNewState(PopupManager.State.AlertLeft);
+            return true;
+        }
+        else if (playerTransform.position.x > (xMax - almostOffScreenThreshold))
+        {
+            print("almost offscreen right");
+            popupManager.SetNewState(PopupManager.State.AlertRight);
+            return true;
+        }
+        else if (playerTransform.position.y < (yMin + almostOffScreenThreshold))
+        {
+            print("almost offscreen down");
+            popupManager.SetNewState(PopupManager.State.AlertBottom);
+            return true;
+        }
+        else if (playerTransform.position.y > (yMax - almostOffScreenThreshold))
+        {
+            print("almost offscreen up");
+            popupManager.SetNewState(PopupManager.State.AlertTop);
+            return true;
+        }
+        popupManager.SetNewState(PopupManager.State.NoAlert);
         return false;
     }
     private void goToScene(string destination)

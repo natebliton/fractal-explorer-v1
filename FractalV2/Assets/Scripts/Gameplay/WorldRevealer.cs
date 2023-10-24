@@ -71,7 +71,7 @@ public class WorldRevealer : MonoBehaviour
             Color newWorldColor = new Color(1, 1, 1, newAlpha);
             Color newHiderColor = new Color(1, 1, 1, 1-newAlpha);
             worldRenderer.color = newWorldColor;
-            hiderRenderer.color = newHiderColor;
+            // hiderRenderer.color = newHiderColor; // leaving hider renderer always visible for now
             
             yield return null;
         }
@@ -82,12 +82,12 @@ public class WorldRevealer : MonoBehaviour
         }
     }
     private void OnMouseDown() {
-        if(state == WorldState.hidden || state == WorldState.hiding){
-            state = WorldState.revealing; 
-        } else {
-            state = WorldState.hiding;
-        }
-        updateDisplay();
+        //if(state == WorldState.hidden || state == WorldState.hiding){
+        //    state = WorldState.revealing; 
+        //} else {
+        //    state = WorldState.hiding;
+        //}
+        //updateDisplay();
     }
 
     /// <summary>

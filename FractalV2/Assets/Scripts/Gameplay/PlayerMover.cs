@@ -31,6 +31,8 @@ public class PlayerMover : MonoBehaviour
 
     private float movementSpeed = 1.0f;
 
+    private const float closeEnoughDistance = 0.01f;
+
     [SerializeField]
     /// <summary>
     /// How quickly the bird can accelerate
@@ -42,7 +44,9 @@ public class PlayerMover : MonoBehaviour
     /// Max speed for the bird
     /// </summary>
     private float birdMaxSpeed = 2f;
-
+    private Vector2 stoppedVelocity = Vector2.zero;
+    private float dampening = 0.3f;
+    private Vector2 travelingVelocity = new Vector2();
 
     private Vector2 movement = new Vector2();
     private bool traveling = false;
@@ -60,9 +64,6 @@ public class PlayerMover : MonoBehaviour
     // SpriteRenderer fireRight;
     Color visible = new Color(255, 255, 255, 255);
     Color invisible = new Color(255, 255, 255, 0);
-
-    [SerializeField]
-    GameObject prefabJumpFire;
 
     Vector2 clickedPosition;
 
@@ -127,11 +128,12 @@ public class PlayerMover : MonoBehaviour
     void Update()
     {
         UpdateState();
+        MoveCharacter(); // having this in FixedUpdate made it miss mouse clicks
     }
 
     private void FixedUpdate()
     {
-        MoveCharacter();
+
     }
 
     private void MoveCharacter()
@@ -142,15 +144,15 @@ public class PlayerMover : MonoBehaviour
             clickedPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                         // Movement for main movement
             // Movement2 for accelleration
-            StopCoroutine("Movement2");
-            StartCoroutine("Movement2", clickedPosition);
+            StopCoroutine("Movement3");
+            StartCoroutine("Movement3", clickedPosition);
         }
         // or, get input from keyboard
         float xIn = Input.GetAxisRaw("Horizontal");
         float yIn = Input.GetAxisRaw("Vertical");
 
         if(yIn != 0 || xIn != 0){
-            StopCoroutine("Movement2");
+            StopCoroutine("Movement3");
             clickedPosition = (Vector2)transform.position;
 
             movement = new Vector3(xIn, yIn);
@@ -159,8 +161,9 @@ public class PlayerMover : MonoBehaviour
             ClampSpeed();
         }
 
-        Vector2 vel = rb2D.velocity;
-        if(vel.magnitude > 0f) {
+        // Vector2 vel = rb2D.velocity;
+        Vector2 vel = travelingVelocity;
+        if (vel.magnitude > 0f) {
             if(vel.magnitude > 3f) {
                 if(vel.x > 0f) {
                     playerState = PlayerStates.flyRight;
@@ -188,12 +191,42 @@ public class PlayerMover : MonoBehaviour
     private void ClampSpeed(){
         if(rb2D.velocity.magnitude > birdMaxSpeed){
             rb2D.velocity = rb2D.velocity.normalized * birdMaxSpeed;
+            print("clamped to " + rb2D.velocity.magnitude);
         }
     }
 
+
     /// <summary>
-    /// Coroutine to move the Bus towards its target destination
-    /// speed capped by busMaxSpeed, with visible property BusMaxSpeed
+    /// Coroutine to move the Player towards its target destination
+    /// </summary>
+    IEnumerator Movement3(Vector2 target)
+    {
+        print("going to " + target.x + " " + target.y);
+        traveling = true;
+        Vector2 initialPosition = transform.position;
+        initialTargetDistance = Vector2.Distance(initialPosition, target);
+        //float speed = 0;
+        //float progress = 0;
+        Vector2 travelingForce;
+
+        while (traveling)
+        {
+            Vector2 lastPosition = transform.position;
+            transform.position = Vector2.SmoothDamp(transform.position, target,ref stoppedVelocity,dampening, birdMaxSpeed);
+            travelingVelocity = new Vector2(transform.position.x,transform.position.y) - lastPosition;
+
+            yield return null;
+        }
+
+        print("target reached");
+
+        traveling = false;
+
+    }
+
+
+    /// <summary>
+    /// Coroutine to move the Player towards its target destination
     /// </summary>
     IEnumerator Movement2(Vector2 target)
     {
@@ -208,28 +241,22 @@ public class PlayerMover : MonoBehaviour
         //while (Vector2.Distance(transform.position, target) > 0.05f)
         while (traveling)
         {
-            //print(rb2D.velocity.x);
-            //progress = ProgressToCity;
 
-           // speed = MovementSpeed * Time.deltaTime;
-            // if (progress < initialTargetDistance / 2)
-            // {
-            //     speed += birdAcceleration;
-            //     if(speed > birdMaxSpeed)
-            //     {
-            //         speed = birdMaxSpeed;
-            //     }
-            // }
-
-            //transform.position = Vector2.Lerp(transform.position, target, MovementSpeed * Time.deltaTime);
-            //transform.position = Vector2.Lerp(transform.position, target, speed);
-            //Vector2(transform.position.x - target.x,transform.position.y - target.y);
             travelingForce = new Vector2(target.x - transform.position.x, target.y - transform.position.y);
             travelingForce *= 10*(Vector2.Distance(transform.position, target));
             travelingForce = Vector2.ClampMagnitude(travelingForce, birdAcceleration);
             rb2D.AddForce(travelingForce,ForceMode2D.Force);
-            rb2D.velocity = characterScale * Vector2.ClampMagnitude(rb2D.velocity, birdMaxSpeed);
-            //Vector2.Angle(transform.position, target)
+             Vector2.Lerp(transform.position, target, 1.0f);
+            //print(rb2D.velocity);
+            ClampSpeed();
+            //print("clamped at " + rb2D.velocity);
+
+            float currentTargetDistance = Vector2.Distance(transform.position, target);
+            if(Mathf.Abs(currentTargetDistance) < closeEnoughDistance)
+            {
+                rb2D.velocity = new Vector2(0f, 0f);
+            }
+
             yield return null;
         }
 
@@ -241,7 +268,7 @@ public class PlayerMover : MonoBehaviour
 
 
     /// <summary>
-    /// Calculates bus speed
+    /// Calculates Player speed
     /// </summary>
     /// <param name="currentDistance">current distance to target</param>
     /// <param name="maxDistance">initial max distance to target</param>
