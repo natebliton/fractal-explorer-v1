@@ -28,6 +28,15 @@ public class CameraBoundaryManager : MonoBehaviour
     private float almostOffScreenThreshold = 1.0f;
 
     private PopupManager popupManager;
+    private offscreen almostOffscreenState = offscreen.not;
+    enum offscreen
+    {
+        almostLeft,
+        almostRight,
+        almostUp,
+        almostDown,
+        not
+    }
 
     #endregion
 
@@ -74,7 +83,7 @@ public class CameraBoundaryManager : MonoBehaviour
         if(playerTransform.position.x < (xMin - offScreenThreshold)){
             print("offscreen left");
             goToParent();
-            return true;
+            return true;   
         } else if (playerTransform.position.x > (xMax + offScreenThreshold)){
             print("offscreen right");
             goToParent();
@@ -94,31 +103,48 @@ public class CameraBoundaryManager : MonoBehaviour
     {
         if (playerTransform.position.x < (xMin + almostOffScreenThreshold))
         {
-            print("almost offscreen left");
-            popupManager.SetNewState(PopupManager.State.AlertLeft);
+            if (almostOffscreenState != offscreen.almostLeft)
+            {
+                almostOffscreenState = offscreen.almostLeft;
+                print("almost offscreen left");
+                popupManager.SetNewState(PopupManager.State.AlertLeft);
+            }
             return true;
         }
         else if (playerTransform.position.x > (xMax - almostOffScreenThreshold))
         {
-            print("almost offscreen right");
-            popupManager.SetNewState(PopupManager.State.AlertRight);
+            if(almostOffscreenState != offscreen.almostRight)
+            {
+                almostOffscreenState = offscreen.almostRight;
+                print("almost offscreen right");
+                popupManager.SetNewState(PopupManager.State.AlertRight);
+            }
             return true;
         }
         else if (playerTransform.position.y < (yMin + almostOffScreenThreshold))
         {
-            print("almost offscreen down");
-            popupManager.SetNewState(PopupManager.State.AlertBottom);
+            if (almostOffscreenState != offscreen.almostDown)
+            {
+                // print("almost offscreen down");
+                almostOffscreenState = offscreen.almostDown;
+                popupManager.SetNewState(PopupManager.State.AlertBottom);
+            }
             return true;
         }
         else if (playerTransform.position.y > (yMax - almostOffScreenThreshold))
         {
-            print("almost offscreen up");
-            popupManager.SetNewState(PopupManager.State.AlertTop);
+            if (almostOffscreenState != offscreen.almostUp)
+            {
+                almostOffscreenState = offscreen.almostUp;
+                // print("almost offscreen up");
+                popupManager.SetNewState(PopupManager.State.AlertTop);
+            }
             return true;
-        } else
-        {
-            popupManager.SetNewState(PopupManager.State.NoAlert);
         }
+        almostOffscreenState = offscreen.not;
+        // print("not almost offscreen");
+        popupManager.SetNewState(PopupManager.State.NoAlert);
+        
         return false;
     }
     public void goToParent() {

@@ -31,6 +31,7 @@ public class PopupManager : MonoBehaviour
         Button rightButton = gameObject.transform.GetChild(0).GetChild(3).GetComponent<Button>();
         if(Camera.main.GetComponent<CameraFollow>() != null)
         {
+            print("attached to CameraFollow Script");
             bottomButton.onClick.AddListener(delegate { Camera.main.GetComponent<CameraFollow>().GoDownScene(); });
             topButton.onClick.AddListener(delegate { Camera.main.GetComponent<CameraFollow>().GoUpScene(); });
             leftButton.onClick.AddListener(delegate { Camera.main.GetComponent<CameraFollow>().GoLeftScene(); });
@@ -38,6 +39,7 @@ public class PopupManager : MonoBehaviour
         }
         if (Camera.main.GetComponent<CameraBoundaryManager>() != null)
         {
+            print("attached to CameraBoundaryManager Script");
             bottomButton.onClick.AddListener(delegate { Camera.main.GetComponent<CameraBoundaryManager>().goToParent(); });
             topButton.onClick.AddListener(delegate { Camera.main.GetComponent<CameraBoundaryManager>().goToParent(); });
             leftButton.onClick.AddListener(delegate { Camera.main.GetComponent<CameraBoundaryManager>().goToParent(); });
@@ -54,42 +56,49 @@ public class PopupManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //print(newState + " " + currentState);
         if(newState != currentState)
         {
-            switch(newState)
+            print(newState + " " + currentState);
+            switch (newState)
             {
                 case State.AlertBottom:
                     bottomAlert.SetActive(true);
                     topAlert.SetActive(false);
                     rightAlert.SetActive(false);
                     leftAlert.SetActive(false);
+                    currentState = newState;
                     break;
                 case State.AlertTop:
                     bottomAlert.SetActive(false);
                     topAlert.SetActive(true);
                     rightAlert.SetActive(false);
                     leftAlert.SetActive(false);
+                    currentState = newState;
                     break;
                 case State.AlertRight:
                     bottomAlert.SetActive(false);
                     topAlert.SetActive(false);
                     rightAlert.SetActive(true);
                     leftAlert.SetActive(false);
+                    currentState = newState;
                     break;
                 case State.AlertLeft:
                     bottomAlert.SetActive(false);
                     topAlert.SetActive(false);
                     rightAlert.SetActive(false);
                     leftAlert.SetActive(true);
+                    currentState = newState;
                     break;
                 case State.NoAlert:
                     bottomAlert.SetActive(false);
                     topAlert.SetActive(false);
                     rightAlert.SetActive(false);
                     leftAlert.SetActive(false);
+                    print("set to NoAlert");
+                    currentState = newState;
                     break;
-                default:
-                    break;
+
 
             }
         }
