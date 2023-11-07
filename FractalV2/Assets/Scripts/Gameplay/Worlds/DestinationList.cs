@@ -6,7 +6,7 @@ public static class DestinationList
 {
     public enum Worlds {
         NULL,
-        Beach,
+        BeachBall,
         CDGarden,
         GardenAndSwirls,
         GardenBridge,

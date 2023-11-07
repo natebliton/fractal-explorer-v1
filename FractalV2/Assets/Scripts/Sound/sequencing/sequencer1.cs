@@ -5,6 +5,8 @@ using UnityEngine;
 public class sequencer1 : MonoBehaviour
 {
     [SerializeField]
+    private bool playMusic;
+    [SerializeField]
     private float tempo;
     private float workingTempo;
     private float ticsPerQuarter = 960;
@@ -71,31 +73,34 @@ public class sequencer1 : MonoBehaviour
     // 
     private void FixedUpdate()
     {
-        //print("at tic " + currentTic);
-        // start counting if we haven't
-        foreach (Note note in notes)
+        if (playMusic)
         {
-            //print("checking note " + note.getStartTime() + " " + note.getState());
-            if (note.getState() == Note.state.ready &&
-                note.getStartTime() <= currentTic)
+            //print("at tic " + currentTic);
+            // start counting if we haven't
+            foreach (Note note in notes)
             {
-                print("playing " + note.getPitch() + " at " + note.getStartTime() + " " + currentTic);
+                //print("checking note " + note.getStartTime() + " " + note.getState());
+                if (note.getState() == Note.state.ready &&
+                    note.getStartTime() <= currentTic)
+                {
+                    print("playing " + note.getPitch() + " at " + note.getStartTime() + " " + currentTic);
 
-                note.setState(Note.state.playing);
-                string message = "channel" + note.getChannel() + "pitchIn";
-                libPdInstance.SendFloat(message, note.getPitch());
+                    note.setState(Note.state.playing);
+                    string message = "channel" + note.getChannel() + "pitchIn";
+                    libPdInstance.SendFloat(message, note.getPitch());
 
+                }
             }
-        }
-        // if too much time has elapsed, longer than the entire loop, reset timer
-        // scan through list of notes, for this channel, if a note hasn't played and needs to, then play it
-        currentTic += ticsPerMS * frameRate;
-        if (currentTic >= loopDurationTics)
-        {
-            currentTic = 0;
-            foreach(Note note in notes)
+            // if too much time has elapsed, longer than the entire loop, reset timer
+            // scan through list of notes, for this channel, if a note hasn't played and needs to, then play it
+            currentTic += ticsPerMS * frameRate;
+            if (currentTic >= loopDurationTics)
             {
-                note.setState(Note.state.ready);
+                currentTic = 0;
+                foreach (Note note in notes)
+                {
+                    note.setState(Note.state.ready);
+                }
             }
         }
     }
