@@ -29,13 +29,15 @@ public class PopupManager : MonoBehaviour
         Button topButton = gameObject.transform.GetChild(0).GetChild(1).GetComponent<Button>();
         Button leftButton = gameObject.transform.GetChild(0).GetChild(2).GetComponent<Button>();
         Button rightButton = gameObject.transform.GetChild(0).GetChild(3).GetComponent<Button>();
-        if(Camera.main.GetComponent<CameraFollow>() != null)
+        Button pauseButton = gameObject.transform.GetChild(0).GetChild(4).GetComponent<Button>();
+        if (Camera.main.GetComponent<CameraFollow>() != null)
         {
             print("attached to CameraFollow Script");
             bottomButton.onClick.AddListener(delegate { Camera.main.GetComponent<CameraFollow>().GoDownScene(); });
             topButton.onClick.AddListener(delegate { Camera.main.GetComponent<CameraFollow>().GoUpScene(); });
             leftButton.onClick.AddListener(delegate { Camera.main.GetComponent<CameraFollow>().GoLeftScene(); });
             rightButton.onClick.AddListener(delegate { Camera.main.GetComponent<CameraFollow>().GoRightScene(); });
+            pauseButton.onClick.AddListener(delegate { PauseGame(); });
         }
         if (Camera.main.GetComponent<CameraBoundaryManager>() != null)
         {
@@ -44,6 +46,7 @@ public class PopupManager : MonoBehaviour
             topButton.onClick.AddListener(delegate { Camera.main.GetComponent<CameraBoundaryManager>().goToParent(); });
             leftButton.onClick.AddListener(delegate { Camera.main.GetComponent<CameraBoundaryManager>().goToParent(); });
             rightButton.onClick.AddListener(delegate { Camera.main.GetComponent<CameraBoundaryManager>().goToParent(); });
+            pauseButton.onClick.AddListener(delegate { PauseGame(); });
         }
 
         currentState = newState = State.NoAlert;
@@ -112,5 +115,10 @@ public class PopupManager : MonoBehaviour
     public State GetCurrentState()
     {
         return currentState;
+    }
+
+    public void PauseGame()
+    {
+        MenuManager.GoToMenu(MenuName.Pause);
     }
 }
