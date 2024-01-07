@@ -7,9 +7,12 @@ using UnityEngine;
 /// </summary>
 public class PauseMenu : MonoBehaviour
 {
+    SoundManager soundManager;
+
     // Start is called before the first frame update
     void Start()
     {
+        soundManager = GameObject.FindGameObjectWithTag("generalSound").GetComponent<SoundManager>();
         // play click sound
      //   AudioManager.Play(AudioClipName.MenuButtonClick);
         // pause the game when added to the scene
@@ -18,8 +21,9 @@ public class PauseMenu : MonoBehaviour
 
     public void HandleResumeButtonOnClickEvent()
     {
+        soundManager.PlayClick();
         // play click sound
-      //  AudioManager.Play(AudioClipName.MenuButtonClick);
+        //  AudioManager.Play(AudioClipName.MenuButtonClick);
         // unpause the game and destroy the menu
         Time.timeScale = 1;
         Destroy(gameObject);
@@ -27,8 +31,9 @@ public class PauseMenu : MonoBehaviour
 
     public void HandleQuitButtonOnClickEvent()
     {
+        soundManager.PlayClick();
         // play click sound
-      //  AudioManager.Play(AudioClipName.MenuButtonClick);
+        //  AudioManager.Play(AudioClipName.MenuButtonClick);
         // unpause game, destroy menu, and go to main menu
         Time.timeScale = 1;
         Destroy(gameObject);

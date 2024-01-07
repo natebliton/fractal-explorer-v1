@@ -21,7 +21,7 @@ public class sequencer1 : MonoBehaviour
 
     private List<Note> notes;
 
-    public LibPdInstance libPdInstance;
+    private LibPdInstance libPdInstance;
 
     // Start is called before the first frame update
     void Start()
@@ -104,4 +104,5 @@ public class sequencer1 : MonoBehaviour
             }
         }
     }
+
 }

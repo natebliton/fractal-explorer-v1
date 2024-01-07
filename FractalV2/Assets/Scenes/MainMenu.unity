@@ -901,7 +901,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playMusic: 0
   tempo: 80
-  libPdInstance: {fileID: 1110570620}
 --- !u!1 &1132488429
 GameObject:
   m_ObjectHideFlags: 0
@@ -998,10 +997,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1110570620}
-        m_TargetAssemblyTypeName: LibPdInstance, Assembly-CSharp
-        m_MethodName: SendBang
-        m_Mode: 5
+      - m_Target: {fileID: 1776829115}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: PlayClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1364,9 +1363,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1776829114}
   - component: {fileID: 1776829113}
+  - component: {fileID: 1776829115}
   m_Layer: 0
   m_Name: GeneralSound
-  m_TagString: Untagged
+  m_TagString: generalSound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1399,6 +1399,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1776829115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776829112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21d3922ec1bfe5b46805e04674f0e30c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2019982694
 PrefabInstance:
   m_ObjectHideFlags: 0

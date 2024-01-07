@@ -1,0 +1,1243 @@
+fileFormatVersion: 2
+guid: ce8ff49f15424374dafae86e4f859fc0
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  mosaicSpriteImportData:
+  - name: blowfish-animation-parts_0000_Neutral.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 225
+      y: 201
+      width: 114
+      height: 29
+    spriteID: 71680236748ec6e448737edfbc20dcca
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 225, y: 201}
+    spritePosition: {x: 10, y: 61}
+  - name: blowfish-animation-parts_0001_smile.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 245
+      width: 113
+      height: 101
+    spriteID: 9da50d51119623843ae8a8f2c95e4ac6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 245}
+    spritePosition: {x: 10, y: 20}
+  - name: blowfish-animation-parts_0002_Ah-1.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 136
+      width: 114
+      height: 101
+    spriteID: fb24f604e92f1ad4c881864b46497278
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 136}
+    spritePosition: {x: 10, y: 20}
+  - name: blowfish-animation-parts_0003_Ah-2.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 114
+      height: 124
+    spriteID: 135813c1a2e6adc4188c09a9e6b15ce9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 10, y: 0}
+  - name: blowfish-animation-parts_0004_D.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 465
+      width: 114
+      height: 40
+    spriteID: 8545648f3477994429bade394e135c01
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 465}
+    spritePosition: {x: 10, y: 56}
+  - name: blowfish-animation-parts_0005_Ee.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 347
+      y: 4
+      width: 133
+      height: 42
+    spriteID: 7aa0885647cef8143a474af2f7162b19
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 347, y: 4}
+    spritePosition: {x: 0, y: 53}
+  - name: blowfish-animation-parts_0006_F.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 225
+      y: 273
+      width: 114
+      height: 23
+    spriteID: 2bcce4d0a8321dc47ba5f626bb07a6c2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 225, y: 273}
+    spritePosition: {x: 10, y: 60}
+  - name: blowfish-animation-parts_0007_L.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 225
+      y: 153
+      width: 114
+      height: 40
+    spriteID: 022c5bbe015f6414daa9031ba6a94538
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 225, y: 153}
+    spritePosition: {x: 10, y: 54}
+  - name: blowfish-animation-parts_0008_M.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 225
+      y: 238
+      width: 114
+      height: 27
+    spriteID: 8bad35990c3be6247903cca3a32cb723
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 225, y: 238}
+    spritePosition: {x: 10, y: 61}
+  - name: blowfish-animation-parts_0009_Oh.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 354
+      width: 102
+      height: 103
+    spriteID: bd2149b32086bbd4ab976a5d09777e17
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 354}
+    spritePosition: {x: 16, y: 24}
+  - name: blowfish-animation-parts_0010_R.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 225
+      y: 304
+      width: 114
+      height: 23
+    spriteID: 1e40462a3b4b0914abdcd36167ee634e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 225, y: 304}
+    spritePosition: {x: 10, y: 60}
+  - name: blowfish-animation-parts_0011_S.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 225
+      y: 335
+      width: 114
+      height: 23
+    spriteID: ae6d72efe780acf4fa1c304453d830a8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 225, y: 335}
+    spritePosition: {x: 10, y: 60}
+  - name: blowfish-animation-parts_0012_Uh-1.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 225
+      y: 93
+      width: 114
+      height: 52
+    spriteID: cb4b6548711f5f74baaad1e4a84fa8c2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 225, y: 93}
+    spritePosition: {x: 10, y: 44}
+  - name: blowfish-animation-parts_0013_Uh-2.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 225
+      y: 4
+      width: 114
+      height: 81
+    spriteID: c3ab8c64d3bc8464aab83fcbed4dbb1c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 225, y: 4}
+    spritePosition: {x: 10, y: 30}
+  - name: blowfish-animation-parts_0014_W-Oo-1.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 126
+      y: 4
+      width: 91
+      height: 103
+    spriteID: dd3dfd605c44ada4ab3d3fe5f4c6a188
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 126, y: 4}
+    spritePosition: {x: 22, y: 24}
+  - name: blowfish-animation-parts_0015_W-Oo-2.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 126
+      y: 115
+      width: 83
+      height: 103
+    spriteID: 3dfc281b8330460489310678c362995f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 126, y: 115}
+    spritePosition: {x: 26, y: 24}
+  - name: blowfish-animation-parts_0016_W-Oo-3.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 126
+      y: 226
+      width: 81
+      height: 83
+    spriteID: fd40d014b20aac24aa152e73dd310da8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 126, y: 226}
+    spritePosition: {x: 25, y: 34}
+  rigSpriteImportData:
+  - name: blowfish-animation-parts_0000_Neutral.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 225
+      y: 201
+      width: 114
+      height: 29
+    spriteID: 360a42ac03be66d4985887a8e7845819
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 225, y: 201}
+    spritePosition: {x: 10, y: 61}
+  - name: blowfish-animation-parts_0001_smile.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 245
+      width: 113
+      height: 101
+    spriteID: cd71aa1f9fddea345972133039d89772
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 245}
+    spritePosition: {x: 10, y: 20}
+  - name: blowfish-animation-parts_0002_Ah-1.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 136
+      width: 114
+      height: 101
+    spriteID: b08b8ce9d0953a1448c1012bc192971b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 136}
+    spritePosition: {x: 10, y: 20}
+  - name: blowfish-animation-parts_0003_Ah-2.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 114
+      height: 124
+    spriteID: 5b7692c0531ea374f863cb7749150de9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 10, y: 0}
+  - name: blowfish-animation-parts_0004_D.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 465
+      width: 114
+      height: 40
+    spriteID: 4650b0e68fb9e564b9d508e0f61695c0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 465}
+    spritePosition: {x: 10, y: 56}
+  - name: blowfish-animation-parts_0005_Ee.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 347
+      y: 4
+      width: 133
+      height: 42
+    spriteID: f9b5e66bdeb12b24e9fdef619bc599e6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 347, y: 4}
+    spritePosition: {x: 0, y: 53}
+  - name: blowfish-animation-parts_0006_F.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 225
+      y: 273
+      width: 114
+      height: 23
+    spriteID: bfe87c070a490164fa6d94cfb44d1430
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 225, y: 273}
+    spritePosition: {x: 10, y: 60}
+  - name: blowfish-animation-parts_0007_L.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 225
+      y: 153
+      width: 114
+      height: 40
+    spriteID: 28619806d789ef040b98a4a3349cafc3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 225, y: 153}
+    spritePosition: {x: 10, y: 54}
+  - name: blowfish-animation-parts_0008_M.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 225
+      y: 238
+      width: 114
+      height: 27
+    spriteID: 1738bd7c3cbbaa24ca14f5ef375e97b4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 225, y: 238}
+    spritePosition: {x: 10, y: 61}
+  - name: blowfish-animation-parts_0009_Oh.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 354
+      width: 102
+      height: 103
+    spriteID: c4606a08445f2264d881ae53edc13037
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 354}
+    spritePosition: {x: 16, y: 24}
+  - name: blowfish-animation-parts_0010_R.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 225
+      y: 304
+      width: 114
+      height: 23
+    spriteID: 1639f54940c449a4c9a9dba0ceb44ed3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 225, y: 304}
+    spritePosition: {x: 10, y: 60}
+  - name: blowfish-animation-parts_0011_S.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 225
+      y: 335
+      width: 114
+      height: 23
+    spriteID: da51cb283e408df43bdd7c6eedfe4533
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 225, y: 335}
+    spritePosition: {x: 10, y: 60}
+  - name: blowfish-animation-parts_0012_Uh-1.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 225
+      y: 93
+      width: 114
+      height: 52
+    spriteID: 6be44b13af19bab48b57e0b73161f14a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 225, y: 93}
+    spritePosition: {x: 10, y: 44}
+  - name: blowfish-animation-parts_0013_Uh-2.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 225
+      y: 4
+      width: 114
+      height: 81
+    spriteID: 81937c07f470bc642a69b569534c1cbf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 225, y: 4}
+    spritePosition: {x: 10, y: 30}
+  - name: blowfish-animation-parts_0014_W-Oo-1.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 126
+      y: 4
+      width: 91
+      height: 103
+    spriteID: 9bae2648c1550e44a86553b7c58b1182
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 126, y: 4}
+    spritePosition: {x: 22, y: 24}
+  - name: blowfish-animation-parts_0015_W-Oo-2.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 126
+      y: 115
+      width: 83
+      height: 103
+    spriteID: 57c108fccd099094db4d8bd959c703a8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 126, y: 115}
+    spritePosition: {x: 26, y: 24}
+  - name: blowfish-animation-parts_0016_W-Oo-3.png
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 126
+      y: 226
+      width: 81
+      height: 83
+    spriteID: 7420466a83219f147b3ef9b819003f2a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 126, y: 226}
+    spritePosition: {x: 25, y: 34}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  characterMode: 0
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  padding: 4
+  spriteSizeExpand: 0
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers:
+  - name: blowfish-animation-parts_0000_Neutral.png
+    spriteName: blowfish-animation-parts_0000_Neutral.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 71680236748ec6e448737edfbc20dcca
+    layerID: 18
+    mosaicPosition: {x: 225, y: 201}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0001_smile.png
+    spriteName: blowfish-animation-parts_0001_smile.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9da50d51119623843ae8a8f2c95e4ac6
+    layerID: 17
+    mosaicPosition: {x: 4, y: 245}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0002_Ah-1.png
+    spriteName: blowfish-animation-parts_0002_Ah-1.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: fb24f604e92f1ad4c881864b46497278
+    layerID: 16
+    mosaicPosition: {x: 4, y: 136}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0003_Ah-2.png
+    spriteName: blowfish-animation-parts_0003_Ah-2.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 135813c1a2e6adc4188c09a9e6b15ce9
+    layerID: 15
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0004_D.png
+    spriteName: blowfish-animation-parts_0004_D.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 8545648f3477994429bade394e135c01
+    layerID: 14
+    mosaicPosition: {x: 4, y: 465}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0005_Ee.png
+    spriteName: blowfish-animation-parts_0005_Ee.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7aa0885647cef8143a474af2f7162b19
+    layerID: 13
+    mosaicPosition: {x: 347, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0006_F.png
+    spriteName: blowfish-animation-parts_0006_F.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 2bcce4d0a8321dc47ba5f626bb07a6c2
+    layerID: 12
+    mosaicPosition: {x: 225, y: 273}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0007_L.png
+    spriteName: blowfish-animation-parts_0007_L.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 022c5bbe015f6414daa9031ba6a94538
+    layerID: 11
+    mosaicPosition: {x: 225, y: 153}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0008_M.png
+    spriteName: blowfish-animation-parts_0008_M.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 8bad35990c3be6247903cca3a32cb723
+    layerID: 10
+    mosaicPosition: {x: 225, y: 238}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0009_Oh.png
+    spriteName: blowfish-animation-parts_0009_Oh.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: bd2149b32086bbd4ab976a5d09777e17
+    layerID: 9
+    mosaicPosition: {x: 4, y: 354}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0010_R.png
+    spriteName: blowfish-animation-parts_0010_R.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 1e40462a3b4b0914abdcd36167ee634e
+    layerID: 8
+    mosaicPosition: {x: 225, y: 304}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0011_S.png
+    spriteName: blowfish-animation-parts_0011_S.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ae6d72efe780acf4fa1c304453d830a8
+    layerID: 7
+    mosaicPosition: {x: 225, y: 335}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0012_Uh-1.png
+    spriteName: blowfish-animation-parts_0012_Uh-1.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: cb4b6548711f5f74baaad1e4a84fa8c2
+    layerID: 6
+    mosaicPosition: {x: 225, y: 93}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0013_Uh-2.png
+    spriteName: blowfish-animation-parts_0013_Uh-2.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c3ab8c64d3bc8464aab83fcbed4dbb1c
+    layerID: 5
+    mosaicPosition: {x: 225, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0014_W-Oo-1.png
+    spriteName: blowfish-animation-parts_0014_W-Oo-1.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: dd3dfd605c44ada4ab3d3fe5f4c6a188
+    layerID: 4
+    mosaicPosition: {x: 126, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0015_W-Oo-2.png
+    spriteName: blowfish-animation-parts_0015_W-Oo-2.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 3dfc281b8330460489310678c362995f
+    layerID: 3
+    mosaicPosition: {x: 126, y: 115}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0016_W-Oo-3.png
+    spriteName: blowfish-animation-parts_0016_W-Oo-3.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: fd40d014b20aac24aa152e73dd310da8
+    layerID: 2
+    mosaicPosition: {x: 126, y: 226}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  rigPSDLayers:
+  - name: blowfish-animation-parts_0000_Neutral.png
+    spriteName: blowfish-animation-parts_0000_Neutral.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 360a42ac03be66d4985887a8e7845819
+    layerID: 18
+    mosaicPosition: {x: 225, y: 201}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0001_smile.png
+    spriteName: blowfish-animation-parts_0001_smile.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: cd71aa1f9fddea345972133039d89772
+    layerID: 17
+    mosaicPosition: {x: 4, y: 245}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0002_Ah-1.png
+    spriteName: blowfish-animation-parts_0002_Ah-1.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: b08b8ce9d0953a1448c1012bc192971b
+    layerID: 16
+    mosaicPosition: {x: 4, y: 136}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0003_Ah-2.png
+    spriteName: blowfish-animation-parts_0003_Ah-2.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 5b7692c0531ea374f863cb7749150de9
+    layerID: 15
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0004_D.png
+    spriteName: blowfish-animation-parts_0004_D.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 4650b0e68fb9e564b9d508e0f61695c0
+    layerID: 14
+    mosaicPosition: {x: 4, y: 465}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0005_Ee.png
+    spriteName: blowfish-animation-parts_0005_Ee.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f9b5e66bdeb12b24e9fdef619bc599e6
+    layerID: 13
+    mosaicPosition: {x: 347, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0006_F.png
+    spriteName: blowfish-animation-parts_0006_F.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: bfe87c070a490164fa6d94cfb44d1430
+    layerID: 12
+    mosaicPosition: {x: 225, y: 273}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0007_L.png
+    spriteName: blowfish-animation-parts_0007_L.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 28619806d789ef040b98a4a3349cafc3
+    layerID: 11
+    mosaicPosition: {x: 225, y: 153}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0008_M.png
+    spriteName: blowfish-animation-parts_0008_M.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 1738bd7c3cbbaa24ca14f5ef375e97b4
+    layerID: 10
+    mosaicPosition: {x: 225, y: 238}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0009_Oh.png
+    spriteName: blowfish-animation-parts_0009_Oh.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c4606a08445f2264d881ae53edc13037
+    layerID: 9
+    mosaicPosition: {x: 4, y: 354}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0010_R.png
+    spriteName: blowfish-animation-parts_0010_R.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 1639f54940c449a4c9a9dba0ceb44ed3
+    layerID: 8
+    mosaicPosition: {x: 225, y: 304}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0011_S.png
+    spriteName: blowfish-animation-parts_0011_S.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: da51cb283e408df43bdd7c6eedfe4533
+    layerID: 7
+    mosaicPosition: {x: 225, y: 335}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0012_Uh-1.png
+    spriteName: blowfish-animation-parts_0012_Uh-1.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 6be44b13af19bab48b57e0b73161f14a
+    layerID: 6
+    mosaicPosition: {x: 225, y: 93}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0013_Uh-2.png
+    spriteName: blowfish-animation-parts_0013_Uh-2.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 81937c07f470bc642a69b569534c1cbf
+    layerID: 5
+    mosaicPosition: {x: 225, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0014_W-Oo-1.png
+    spriteName: blowfish-animation-parts_0014_W-Oo-1.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9bae2648c1550e44a86553b7c58b1182
+    layerID: 4
+    mosaicPosition: {x: 126, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0015_W-Oo-2.png
+    spriteName: blowfish-animation-parts_0015_W-Oo-2.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 57c108fccd099094db4d8bd959c703a8
+    layerID: 3
+    mosaicPosition: {x: 126, y: 115}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: blowfish-animation-parts_0016_W-Oo-3.png
+    spriteName: blowfish-animation-parts_0016_W-Oo-3.png
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7420466a83219f147b3ef9b819003f2a
+    layerID: 2
+    mosaicPosition: {x: 126, y: 226}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  spriteSizeExpandChanged: 0
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []

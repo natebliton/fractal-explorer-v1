@@ -34,7 +34,10 @@ public static class DestinationList
         GardenBuds,
         SparklePalms,
         GardenFountain,
-        AirDragonAndCity
+        AirDragonAndCity,
+        CoralBright,
+        CoralWithGiantClam,
+        EmeraldCave
     }
 
     public enum Islands {

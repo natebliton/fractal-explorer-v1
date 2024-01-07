@@ -151,6 +151,7 @@ public class CameraBoundaryManager : MonoBehaviour
         
         string nextScene = parentIsland.ToString();
         if(nextScene != "NULL") {
+            print("trying to go to " + nextScene);
             sceneFaderScript.LoadNextScene(nextScene);        
         } else {
             MenuManager.GoToMenu(MenuName.Main);

@@ -15,37 +15,42 @@ public static class EventManager
 
     static List<WorldRevealer> zoomCameraInvokers = new List<WorldRevealer>();
     static List<UnityAction<float>> zoomCameraListeners = new List<UnityAction<float>>();
- /*
-    static List<FreezerBlock> freezerInvokers = new List<FreezerBlock>();
-    static List<UnityAction> freezerListeners = new List<UnityAction>();
 
-    static List<SpeedupBlock> speedupInvokers = new List<SpeedupBlock>();
-    static List<UnityAction> speedupListeners = new List<UnityAction>();
-
-    static List<SpeedupEffectMonitor> speedupSlowingInvokers = new List<SpeedupEffectMonitor>();
-    static List<UnityAction> speedupSlowingListeners = new List<UnityAction>();
-
-    static List<Block> pointsAddedInvokers = new List<Block>();
-    static List<UnityAction<float>> pointsAddedListeners = new List<UnityAction<float>>();
-
-    static List<Ball> ballLostInvokers = new List<Ball>();
-    static List<UnityAction> ballLostListeners = new List<UnityAction>();
-
-    static List<HUD> spawnBallInvokers = new List<HUD>();
-    static List<UnityAction> spawnBallListeners = new List<UnityAction>();
-
-    static List<HUD> lastBallRemovedInvokers = new List<HUD>();
-    static List<UnityAction> lastBallRemovedListeners = new List<UnityAction>();
+    static List<GeneralClickSound> playSoundInvokers = new List<GeneralClickSound>();
+    static List<UnityAction<string>> playSoundListeners = new List<UnityAction<string>>();
 
 
-    static List<Block> blockDestroyedInvokers = new List<Block>();
-    static List<UnityAction<BlockType>> blockDestroyedListeners = new List<UnityAction<BlockType>>();
-*/
+    /*
+       static List<FreezerBlock> freezerInvokers = new List<FreezerBlock>();
+       static List<UnityAction> freezerListeners = new List<UnityAction>();
+
+       static List<SpeedupBlock> speedupInvokers = new List<SpeedupBlock>();
+       static List<UnityAction> speedupListeners = new List<UnityAction>();
+
+       static List<SpeedupEffectMonitor> speedupSlowingInvokers = new List<SpeedupEffectMonitor>();
+       static List<UnityAction> speedupSlowingListeners = new List<UnityAction>();
+
+       static List<Block> pointsAddedInvokers = new List<Block>();
+       static List<UnityAction<float>> pointsAddedListeners = new List<UnityAction<float>>();
+
+       static List<Ball> ballLostInvokers = new List<Ball>();
+       static List<UnityAction> ballLostListeners = new List<UnityAction>();
+
+       static List<HUD> spawnBallInvokers = new List<HUD>();
+       static List<UnityAction> spawnBallListeners = new List<UnityAction>();
+
+       static List<HUD> lastBallRemovedInvokers = new List<HUD>();
+       static List<UnityAction> lastBallRemovedListeners = new List<UnityAction>();
+
+
+       static List<Block> blockDestroyedInvokers = new List<Block>();
+       static List<UnityAction<BlockType>> blockDestroyedListeners = new List<UnityAction<BlockType>>();
+   */
     #endregion
 
     #region public methods
 
-        /// <summary>
+    /// <summary>
     /// add enter world invoker
     /// </summary>
     /// <param name="script"></param>
@@ -70,7 +75,7 @@ public static class EventManager
         }
     }
 
-        /// <summary>
+    /// <summary>
     /// add camera zoom invoker
     /// </summary>
     /// <param name="script"></param>
@@ -96,229 +101,244 @@ public static class EventManager
         }
     }
 
-/*
     /// <summary>
-    /// Adds the freezer invoker.
-    /// </summary>
-    /// <param name="script">Script.</param>
-    public static void AddFreezerInvoker(FreezerBlock script)
-    {
-        freezerInvokers.Add(script);
-
-        foreach (UnityAction listener in freezerListeners)
-        {
-            script.AddFreezerEventsListener(listener);
-        }
-    }
-
-    /// <summary>
-    /// Adds the freezer listener.
-    /// </summary>
-    /// <param name="handler">Handler.</param>
-    public static void AddFreezerListener(UnityAction handler)
-    {
-        freezerListeners.Add(handler);
-
-        foreach (FreezerBlock script in freezerInvokers)
-        {
-            script.AddFreezerEventsListener(handler);
-        }
-    }
-
-    /// <summary>
-    /// Adds the speedup invoker.
-    /// </summary>
-    /// <param name="script">Script.</param>
-    public static void AddSpeedupInvoker(SpeedupBlock script)
-    {
-        speedupInvokers.Add(script);
-
-        foreach (UnityAction listener in speedupListeners)
-        {
-            script.AddSpeedupEventsListener(listener);
-        }
-
-    }
-
-    /// <summary>
-    /// Adds the speedup listener.
-    /// </summary>
-    /// <param name="handler">Handler.</param>
-    public static void AddSpeedupListener(UnityAction handler)
-    {
-        speedupListeners.Add(handler);
-
-        foreach (SpeedupBlock script in speedupInvokers)
-        {
-            script.AddSpeedupEventsListener(handler);
-        }
-
-    }
-
-    /// <summary>
-    /// Adds the speedup invoker.
-    /// </summary>
-    /// <param name="script">Script.</param>
-    public static void AddSpeedupSlowingInvoker(SpeedupEffectMonitor script)
-    {
-        speedupSlowingInvokers.Add(script);
-
-        foreach (UnityAction listener in speedupSlowingListeners)
-        {
-            script.AddSpeedupSlowingEventsListener(listener);
-        }
-
-    }
-
-    /// <summary>
-    /// Adds the speedup listener.
-    /// </summary>
-    /// <param name="handler">Handler.</param>
-    public static void AddSpeedupSlowingListener(UnityAction handler)
-    {
-        speedupSlowingListeners.Add(handler);
-
-        foreach (SpeedupEffectMonitor script in speedupSlowingInvokers)
-        {
-            script.AddSpeedupSlowingEventsListener(handler);
-        }
-    }
-
-    /// <summary>
-    /// Adds points added invoker
+    /// add play sound invoker
     /// </summary>
     /// <param name="script"></param>
-    public static void AddPointsAddedInvoker(Block script)
+    public static void AddPlaySoundInvoker(GeneralClickSound script)
     {
-        pointsAddedInvokers.Add(script);
-
-        foreach (UnityAction<float> listener in pointsAddedListeners)
+        playSoundInvokers.Add(script);
+        foreach (UnityAction<string> listener in playSoundListeners)
         {
-            script.AddPointsAddedEvent(listener);
+            script.AddZoomCameraEvent(listener);
         }
     }
 
-    /// <summary>
-    /// Adds points added listener
-    /// </summary>
-    /// <param name="listener"></param>
-    public static void AddPointsAddedListener(UnityAction<float> listener)
-    {
-        pointsAddedListeners.Add(listener);
 
-        foreach(Block script in pointsAddedInvokers)
-        {
-            script.AddPointsAddedEvent(listener);
-        }
-    }
 
-    /// <summary>
-    /// ball counting invoker adding
-    /// </summary>
-    /// <param name="script"></param>
-    public static void AddBallLostInvoker(Ball script)
-    {
-        ballLostInvokers.Add(script);
-        foreach (UnityAction listener in ballLostListeners)
+    /*
+        /// <summary>
+        /// Adds the freezer invoker.
+        /// </summary>
+        /// <param name="script">Script.</param>
+        public static void AddFreezerInvoker(FreezerBlock script)
         {
-            script.AddBallLostEvent(listener);
-        }
-    }
+            freezerInvokers.Add(script);
 
-    /// <summary>
-    /// ball counting listener adding
-    /// </summary>
-    /// <param name="listener"></param>
-    public static void AddBallLostListener(UnityAction listener)
-    {
-        ballLostListeners.Add(listener);
-        foreach (Ball script in ballLostInvokers)
-        {
-            script.AddBallLostEvent(listener);
-        }
-    }
-
-    /// <summary>
-    /// spawn new ball event invoker adding
-    /// </summary>
-    /// <param name="script"></param>
-    public static void AddSpawnBallEventInvoker(HUD script)
-    {
-        spawnBallInvokers.Add(script);
-        foreach (UnityAction listener in spawnBallListeners)
-        {
-            script.AddSpawnBallEventsListener(listener);
-        }
-    }
-
-    /// <summary>
-    /// spawn new ball event listener adding
-    /// </summary>
-    /// <param name="listener"></param>
-    public static void AddSpawnBallEventListener(UnityAction listener)
-    {
-        spawnBallListeners.Add(listener);
-        foreach (HUD script in spawnBallInvokers)
-        {
-            script.AddSpawnBallEventsListener(listener);
+            foreach (UnityAction listener in freezerListeners)
+            {
+                script.AddFreezerEventsListener(listener);
+            }
         }
 
-    }
-
-    /// <summary>
-    /// last ball removed event invoker adding
-    /// </summary>
-    /// <param name="script"></param>
-    public static void AddLastBallRemovedInvoker(HUD script)
-    {
-        lastBallRemovedInvokers.Add(script);
-        foreach (UnityAction listener in lastBallRemovedListeners)
+        /// <summary>
+        /// Adds the freezer listener.
+        /// </summary>
+        /// <param name="handler">Handler.</param>
+        public static void AddFreezerListener(UnityAction handler)
         {
-            script.AddLastBallRemovedEventListener(listener);
-        }
-    }
+            freezerListeners.Add(handler);
 
-    /// <summary>
-    /// last ball removed event listener adding
-    /// </summary>
-    /// <param name="listener"></param>
-    public static void AddLastBallRemovedListener(UnityAction listener)
-    {
-        lastBallRemovedListeners.Add(listener);
-        foreach (HUD script in lastBallRemovedInvokers)
-        {
-            script.AddLastBallRemovedEventListener(listener);
+            foreach (FreezerBlock script in freezerInvokers)
+            {
+                script.AddFreezerEventsListener(handler);
+            }
         }
 
-    }
-
-    /// <summary>
-    /// block destroyed event invoker adding
-    /// </summary>
-    /// <param name="script"></param>
-    public static void AddBlockDestroyedInvoker(Block script)
-    {
-        blockDestroyedInvokers.Add(script);
-        foreach (UnityAction<BlockType> listener in blockDestroyedListeners)
+        /// <summary>
+        /// Adds the speedup invoker.
+        /// </summary>
+        /// <param name="script">Script.</param>
+        public static void AddSpeedupInvoker(SpeedupBlock script)
         {
-            script.AddBlockDestroyedEventListener(listener);
-        }
-    }
+            speedupInvokers.Add(script);
 
-    /// <summary>
-    /// block destroyed event listener adding
-    /// </summary>
-    /// <param name="listener"></param>
-    public static void AddBlockDestroyedListener(UnityAction<BlockType> listener)
-    {
-        blockDestroyedListeners.Add(listener);
-        foreach (Block script in blockDestroyedInvokers)
-        {
-            script.AddBlockDestroyedEventListener(listener);
+            foreach (UnityAction listener in speedupListeners)
+            {
+                script.AddSpeedupEventsListener(listener);
+            }
+
         }
 
-    }
-*/
+        /// <summary>
+        /// Adds the speedup listener.
+        /// </summary>
+        /// <param name="handler">Handler.</param>
+        public static void AddSpeedupListener(UnityAction handler)
+        {
+            speedupListeners.Add(handler);
+
+            foreach (SpeedupBlock script in speedupInvokers)
+            {
+                script.AddSpeedupEventsListener(handler);
+            }
+
+        }
+
+        /// <summary>
+        /// Adds the speedup invoker.
+        /// </summary>
+        /// <param name="script">Script.</param>
+        public static void AddSpeedupSlowingInvoker(SpeedupEffectMonitor script)
+        {
+            speedupSlowingInvokers.Add(script);
+
+            foreach (UnityAction listener in speedupSlowingListeners)
+            {
+                script.AddSpeedupSlowingEventsListener(listener);
+            }
+
+        }
+
+        /// <summary>
+        /// Adds the speedup listener.
+        /// </summary>
+        /// <param name="handler">Handler.</param>
+        public static void AddSpeedupSlowingListener(UnityAction handler)
+        {
+            speedupSlowingListeners.Add(handler);
+
+            foreach (SpeedupEffectMonitor script in speedupSlowingInvokers)
+            {
+                script.AddSpeedupSlowingEventsListener(handler);
+            }
+        }
+
+        /// <summary>
+        /// Adds points added invoker
+        /// </summary>
+        /// <param name="script"></param>
+        public static void AddPointsAddedInvoker(Block script)
+        {
+            pointsAddedInvokers.Add(script);
+
+            foreach (UnityAction<float> listener in pointsAddedListeners)
+            {
+                script.AddPointsAddedEvent(listener);
+            }
+        }
+
+        /// <summary>
+        /// Adds points added listener
+        /// </summary>
+        /// <param name="listener"></param>
+        public static void AddPointsAddedListener(UnityAction<float> listener)
+        {
+            pointsAddedListeners.Add(listener);
+
+            foreach(Block script in pointsAddedInvokers)
+            {
+                script.AddPointsAddedEvent(listener);
+            }
+        }
+
+        /// <summary>
+        /// ball counting invoker adding
+        /// </summary>
+        /// <param name="script"></param>
+        public static void AddBallLostInvoker(Ball script)
+        {
+            ballLostInvokers.Add(script);
+            foreach (UnityAction listener in ballLostListeners)
+            {
+                script.AddBallLostEvent(listener);
+            }
+        }
+
+        /// <summary>
+        /// ball counting listener adding
+        /// </summary>
+        /// <param name="listener"></param>
+        public static void AddBallLostListener(UnityAction listener)
+        {
+            ballLostListeners.Add(listener);
+            foreach (Ball script in ballLostInvokers)
+            {
+                script.AddBallLostEvent(listener);
+            }
+        }
+
+        /// <summary>
+        /// spawn new ball event invoker adding
+        /// </summary>
+        /// <param name="script"></param>
+        public static void AddSpawnBallEventInvoker(HUD script)
+        {
+            spawnBallInvokers.Add(script);
+            foreach (UnityAction listener in spawnBallListeners)
+            {
+                script.AddSpawnBallEventsListener(listener);
+            }
+        }
+
+        /// <summary>
+        /// spawn new ball event listener adding
+        /// </summary>
+        /// <param name="listener"></param>
+        public static void AddSpawnBallEventListener(UnityAction listener)
+        {
+            spawnBallListeners.Add(listener);
+            foreach (HUD script in spawnBallInvokers)
+            {
+                script.AddSpawnBallEventsListener(listener);
+            }
+
+        }
+
+        /// <summary>
+        /// last ball removed event invoker adding
+        /// </summary>
+        /// <param name="script"></param>
+        public static void AddLastBallRemovedInvoker(HUD script)
+        {
+            lastBallRemovedInvokers.Add(script);
+            foreach (UnityAction listener in lastBallRemovedListeners)
+            {
+                script.AddLastBallRemovedEventListener(listener);
+            }
+        }
+
+        /// <summary>
+        /// last ball removed event listener adding
+        /// </summary>
+        /// <param name="listener"></param>
+        public static void AddLastBallRemovedListener(UnityAction listener)
+        {
+            lastBallRemovedListeners.Add(listener);
+            foreach (HUD script in lastBallRemovedInvokers)
+            {
+                script.AddLastBallRemovedEventListener(listener);
+            }
+
+        }
+
+        /// <summary>
+        /// block destroyed event invoker adding
+        /// </summary>
+        /// <param name="script"></param>
+        public static void AddBlockDestroyedInvoker(Block script)
+        {
+            blockDestroyedInvokers.Add(script);
+            foreach (UnityAction<BlockType> listener in blockDestroyedListeners)
+            {
+                script.AddBlockDestroyedEventListener(listener);
+            }
+        }
+
+        /// <summary>
+        /// block destroyed event listener adding
+        /// </summary>
+        /// <param name="listener"></param>
+        public static void AddBlockDestroyedListener(UnityAction<BlockType> listener)
+        {
+            blockDestroyedListeners.Add(listener);
+            foreach (Block script in blockDestroyedInvokers)
+            {
+                script.AddBlockDestroyedEventListener(listener);
+            }
+
+        }
+    */
     #endregion
 
 }

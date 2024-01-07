@@ -16,7 +16,7 @@ public class WorldRevealer : MonoBehaviour
     SpriteRenderer hiderRenderer;
     SpriteRenderer worldRenderer;
 
-    bool hiding = true;
+    bool readyToVisit = true;
     
     Color visible = new Color(255, 255, 255, 255);
     Color invisible = new Color(255, 255, 255, 0);
@@ -24,22 +24,29 @@ public class WorldRevealer : MonoBehaviour
     float worldAlpha = 0.0f;
     public float alphaDuration = 1.0f;
 
-    WorldState state = WorldState.hidden;
+    [SerializeField]
+    private WorldState state;
 
-    enum WorldState {
+    GameObject enterWorldPopup;
+
+    private enum WorldState {
         hidden,
         hiding,
         revealing,
-        revealed
+        revealed,
+        notReadyToVisit
     }
     // Start is called before the first frame update
     void Start()
     {
+        hiddenWorld = this.transform.GetChild(0).gameObject;
         hiderRenderer = GetComponent<SpriteRenderer>();
         worldRenderer = hiddenWorld.GetComponent<SpriteRenderer>();
         hiderRenderer.color = visible;
         worldRenderer.color = invisible;
 
+        // enterWorldPopup = transform.GetChild(0).gameObject.transform.GetChild(0).gameObject;
+        // enterWorldPopup.SetActive(false);
         EventManager.AddEnterWorldInvoker(this);
         EventManager.AddZoomCameraInvoker(this);
     }
@@ -51,6 +58,100 @@ public class WorldRevealer : MonoBehaviour
     }
 
     IEnumerator FadeWorld(WorldState wState, float aTime)
+    {
+        // enterWorldPopup.SetActive(wState == WorldState.revealed);
+        if(wState != WorldState.revealed) {
+            //enterWorldPopup = (GameObject)Instantiate(Resources.Load("EnterWorldPopup"),this.transform,instantiateInWorldSpace:false);
+            //if( enterWorldPopup.GetComponent<EnterWorldPopupManager>().SetButtonText("enter world?"))
+            //{
+              //  print("should have updated text");
+           // }
+            // enterWorldPopup.GetComponent<EnterWorldPopupManager>().SetText("Enter World?");
+            // enterWorldPopup.SetActive(false);
+        } else
+        {
+            Destroy(enterWorldPopup);
+        }
+        float aValue = 0f;
+        WorldState endState = WorldState.hidden;
+
+        if(wState == WorldState.revealing) {
+            aValue = 1f;
+            endState = WorldState.revealed;
+        }
+        
+        print("Fading to " + wState);
+
+       // float alpha = transform.renderer.material.color.a;
+        float alpha = worldRenderer.color.a;
+        for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime)
+        {
+            float newAlpha = Mathf.Lerp(alpha,aValue,t);
+            Color newWorldColor = new Color(1, 1, 1, newAlpha);
+            Color newHiderColor = new Color(1, 1, 1, 1-newAlpha);
+            worldRenderer.color = newWorldColor;
+            // hiderRenderer.color = newHiderColor; // leaving hider renderer always visible for now
+            
+            yield return null;
+        }
+        state = endState;
+        // enterWorldPopup.SetActive(state == WorldState.revealed);
+        if(state != WorldState.revealed) {
+            Destroy(enterWorldPopup);
+        }
+        else
+        {
+            enterWorldPopup = (GameObject)Instantiate(Resources.Load("EnterWorldPopup"), this.transform, instantiateInWorldSpace: false);
+            if (enterWorldPopup.GetComponent<EnterWorldPopupManager>().SetButtonText("enter world?"))
+            {
+                print("should have updated text");
+            }
+        }
+    }
+
+    public void EnterWorld()
+    {
+        print("in enterWorld");
+        if(destinationWorld != DestinationList.Worlds.NULL){
+            print("should be entering");
+            enterWorldEvent.Invoke(destinationWorld);
+            zoomCameraEvent.Invoke(0.95f);
+        }
+    }
+
+    IEnumerator EnterWorld(WorldState wState, float aTime)
+    {
+
+    //     float aValue = 0f;
+    //     WorldState endState = WorldState.hidden;
+
+    //     if(wState == WorldState.revealing) {
+    //         aValue = 1f;
+    //         endState = WorldState.revealed;
+    //     }
+        
+    //     print("Fading to " + wState);
+
+    //    // float alpha = transform.renderer.material.color.a;
+    //     float alpha = worldRenderer.color.a;
+    //     for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime)
+    //     {
+    //         float newAlpha = Mathf.Lerp(alpha,aValue,t);
+    //         Color newWorldColor = new Color(1, 1, 1, newAlpha);
+    //         Color newHiderColor = new Color(1, 1, 1, 1-newAlpha);
+    //         worldRenderer.color = newWorldColor;
+    //         // hiderRenderer.color = newHiderColor; // leaving hider renderer always visible for now
+            
+    //         yield return null;
+    //     }
+    //     state = endState;
+        if(destinationWorld != DestinationList.Worlds.NULL){
+            enterWorldEvent.Invoke(destinationWorld);
+            zoomCameraEvent.Invoke(0.95f);
+        }
+        yield return null;
+    }
+    IEnumerator FadeWorldOld(WorldState wState, float aTime)
     {
 
         float aValue = 0f;
@@ -96,9 +197,22 @@ public class WorldRevealer : MonoBehaviour
     /// </summary>
     /// <param name="coll"></param>
     private void OnTriggerEnter2D(Collider2D coll) {
-        if(state == WorldState.hidden || state == WorldState.hiding){
-            state = WorldState.revealing; 
-        } 
+        if (readyToVisit)
+        {
+            if (state == WorldState.hidden || state == WorldState.hiding)
+            {
+                state = WorldState.revealing;
+            }
+            updateDisplay();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (!(state == WorldState.hidden || state == WorldState.hiding))
+        {
+            state = WorldState.hiding;
+        }
         updateDisplay();
     }
     private void updateDisplay() {
