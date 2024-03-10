@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraBoundaryManager : MonoBehaviour
 {
     #region Fields
-    [SerializeField]
+    // [SerializeField]
     GameObject sceneFader;
 
     SceneFader sceneFaderScript;
@@ -51,11 +51,11 @@ public class CameraBoundaryManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        sceneFader = GameObject.FindGameObjectWithTag("SceneFader");
         sceneFaderScript = sceneFader.GetComponent<SceneFader>();
         playerTransform = GameObject.FindGameObjectWithTag(cameraFollowingTag).GetComponent<Transform>();
         mainCamera = GetComponent<Camera>();
         popupManager = GameObject.FindGameObjectWithTag("DirectionalPopup").GetComponent<PopupManager>();
-
 
         camHeight = mainCamera.orthographicSize;
         camWidth = camHeight * mainCamera.aspect;

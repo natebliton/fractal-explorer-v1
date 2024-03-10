@@ -472,7 +472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583ad859da4a6b646b98a5e64be675c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: -0.3
+  rotationSpeed: -0.03
 --- !u!1 &209756424
 GameObject:
   m_ObjectHideFlags: 0
@@ -58439,7 +58439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenWorld: {fileID: 834471426}
-  destinationWorld: 0
+  destinationWorld: 34
   alphaDuration: 1
   state: 0
 --- !u!58 &517641202
@@ -59440,7 +59440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenWorld: {fileID: 1120290698}
-  destinationWorld: 0
+  destinationWorld: 35
   alphaDuration: 1
   state: 0
 --- !u!58 &803706170
@@ -60053,7 +60053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenWorld: {fileID: 2061090450}
-  destinationWorld: 0
+  destinationWorld: 38
   alphaDuration: 1
   state: 0
 --- !u!58 &952059030
@@ -60204,7 +60204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenWorld: {fileID: 458118697}
-  destinationWorld: 0
+  destinationWorld: 33
   alphaDuration: 1
   state: 0
 --- !u!58 &1004106171
@@ -60817,7 +60817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenWorld: {fileID: 1770583400}
-  destinationWorld: 0
+  destinationWorld: 36
   alphaDuration: 1
   state: 0
 --- !u!58 &1226757371
@@ -61138,7 +61138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenWorld: {fileID: 821103622}
-  destinationWorld: 0
+  destinationWorld: 32
   alphaDuration: 1
   state: 0
 --- !u!114 &1294146961
@@ -61374,7 +61374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583ad859da4a6b646b98a5e64be675c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 0.1
+  rotationSpeed: 0.01
 --- !u!1 &1395585314
 GameObject:
   m_ObjectHideFlags: 0
@@ -61635,10 +61635,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 305347240, guid: 4abdd9e2fa7c4064b86b4ff1b3916f20, type: 3}
-      propertyPath: transitionTime
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7490151182611872334, guid: 4abdd9e2fa7c4064b86b4ff1b3916f20, type: 3}
       propertyPath: m_Name
       value: SceneFader
@@ -62128,7 +62124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenWorld: {fileID: 717289786}
-  destinationWorld: 0
+  destinationWorld: 37
   alphaDuration: 1
   state: 0
 --- !u!58 &1595023590
@@ -63282,7 +63278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenWorld: {fileID: 1619828633}
-  destinationWorld: 0
+  destinationWorld: 34
   alphaDuration: 1
   state: 0
 --- !u!70 &1955240519

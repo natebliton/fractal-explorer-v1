@@ -37,7 +37,13 @@ public static class DestinationList
         AirDragonAndCity,
         CoralBright,
         CoralWithGiantClam,
-        EmeraldCave
+        EmeraldCave,
+        BlueStage,
+        BubbleLands,
+        GoldWaterCaveStage,
+        GreenPlanets,
+        LawnStage,
+        AtmosphereStorms
     }
 
     public enum Islands {
