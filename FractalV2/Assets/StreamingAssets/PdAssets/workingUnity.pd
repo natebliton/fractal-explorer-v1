@@ -1,8 +1,12 @@
-#N canvas 821 1261 450 300 12;
+#N canvas 509 207 610 670 12;
 #X obj 22 202 clicks;
 #X obj 26 45 instruments/sawMelloTester;
 #X obj 221 45 instruments/sawMelloTester;
 #X obj 220 20 r channel1pitchIn;
 #X obj 26 20 r channel0pitchIn;
+#X obj 214 184 instruments/flower/flower1;
+#X obj 192 298 util/generalOutput;
 #X connect 3 0 2 0;
 #X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 5 0 6 1;

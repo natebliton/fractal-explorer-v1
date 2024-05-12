@@ -8,10 +8,12 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class HelpMenu : MonoBehaviour
 {
-    LibPdInstance libPdInstance;
+
+    SoundManager soundManager;
+
     private void Start()
     {
-        libPdInstance = GameObject.FindGameObjectWithTag("sound").GetComponent<LibPdInstance>();
+        soundManager = GameObject.FindGameObjectWithTag("generalSound").GetComponent<SoundManager>();
     }
     /// <summary>
     /// Handles the return button on click event.
@@ -19,9 +21,8 @@ public class HelpMenu : MonoBehaviour
     public void HandleReturnButtonOnClickEvent()
     {
         // play click sound
-        //  AudioManager.Play(AudioClipName.MenuButtonClick);
+        soundManager.PlayClick();
         // go
-        libPdInstance.SendBang("click1");
         SceneManager.LoadScene("MainMenu");
     }
 }
